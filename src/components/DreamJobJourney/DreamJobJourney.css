@@ -1,0 +1,15 @@
+.DreamJobJourney-link-margin {
+  margin-bottom: 10px;
+}
+
+.DreamJobJourney {
+  display: flex;
+  flex-direction: column;
+}
+
+.DreamJobJourney-controls {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-left: 20px;
+}
