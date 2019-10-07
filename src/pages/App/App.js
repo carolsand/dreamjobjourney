@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import DreamJobJourney from '../../pages/DreamJobJourney/DreamJobJourney';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
@@ -10,7 +11,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      ...this.getInitialState(),
       // Initialize user if there's a token, otherwise null
       user: userService.getUser()
     };
@@ -51,8 +51,6 @@ class App extends Component {
           <Route exact path='/dream-job-journey' render={() =>
             userService.getUser() ?
               <DreamJobJourney
-                scores={this.state.scores}
-                handleUpdateScores={this.handleUpdateScores}
               />
               :
               <Redirect to='/login' />
