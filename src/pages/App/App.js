@@ -55,6 +55,13 @@ class App extends Component {
               :
               <Redirect to='/login' />
           } />
+          <Route exact path='/profile' render={() =>
+            userService.getUser() ?
+              <Profile
+              />
+              :
+              <Redirect to='/login' />
+          } />
         </Switch>
       </div>
     );
