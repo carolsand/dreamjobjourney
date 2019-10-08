@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './LoginPage.css';
+import '../LoginPage/LoginPage.css';
 import userService from '../../utils/userService';
 
 class ProfilePage extends Component {
@@ -44,7 +44,7 @@ class ProfilePage extends Component {
         </div>
         <div className="form-group">
           <div className="col-sm-12 text-center">
-            <button className="btn btn-default">SubmitProfile</button>&nbsp;&nbsp;&nbsp;
+            <button className="btn btn-default">Submit Profile</button>&nbsp;&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
           </div>
         </div>
@@ -54,4 +54,4 @@ class ProfilePage extends Component {
   }
 }
 
-export default Profile;
+export default ProfilePage;

@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import DreamJobJourney from '../../pages/DreamJobJourney/DreamJobJourney';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 import userService from '../../utils/userService';
 import tokenService from '../../utils/tokenService';
 
@@ -53,14 +54,14 @@ class App extends Component {
               <DreamJobJourney
               />
               :
-              <Redirect to='/login' />
+              <Redirect to='/dreamjobjourney' />
           } />
-          <Route exact path='/profile' render={() =>
+          <Route exact path='/profilepage' render={() =>
             userService.getUser() ?
-              <Profile
+              <ProfilePage
               />
               :
-              <Redirect to='/login' />
+              <Redirect to='/profilepage' />
           } />
         </Switch>
       </div>

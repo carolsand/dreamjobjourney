@@ -1,7 +1,4 @@
 import {routerActions} from 'react-router-dom';
-import 
-
-import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 const userIsAuthenticated = user.req
 
@@ -12,7 +9,7 @@ export default (
     <Route path="logout" component={LogoutPage} />
     <Route path="navbar" component={NavBar} />
 
-    <Route path="profile" pages={ProfilePage} />
+    <Route path="profilepage" pages={ProfilePage} />
     <Route path="signup" pages={SignupPage} />
     <Route path="dreamjobjourney" pages={DreamJobJourneyPage} />
 
