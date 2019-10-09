@@ -1,33 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Card } from 'react-bulma-components';
+import React, { Component } from 'react';
+import { Section, Hero, Container, Columns } from 'react-bulma-components';
 import './Activity.css';
 
 const Activity = (props) => {
+  console.log("Props in activity.jsx --->" + JSON.stringify(props));
   //const printableLocation = props.loc_stateArray.map((loc_state, idx) => {
     //return <p key={idx}><strong>Location:</strong> {loc_state.name}</p>;
   //});
    
   return (
-    <div className="ActivityCard column is-one-third">
-      <Card>
-        {/* <Link to={`/activity/${props.id}`}>
-          <div className="card-image" style={{
-            backgroundColor: props.loc_stateArray[0].color
-          }}>
-            <img src={props.frontImage} alt={props.name} />
+    <div>
+      <Columns>
+        <Hero>
+          <div className="hero-body">
+            <h1 className="title is-2">{props.name.charAt(0).toUpperCase() + props.name.slice(1)}</h1>
+            <h1 className="title is-2">{props.description.charAt(0).toUpperCase() + props.description.slice(1)}</h1>
+            {console.log("Props in activity.jsx after h1 tag --->" + JSON.stringify(props.city))};
+            {/* <h1 className="title is-2">{props.city.charAt(0)[1].toUpperCase() + props.city.slice(1)}</h1> */}
+            {/* <h1 className="title is-2">{props.state.charAt(0)[1].toUpperCase() + props.state.slice(1)}</h1> */}
           </div>
-          <div className="card-content">
-            <h1 class="title is-3">
-              {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
-            </h1>
-          {/* printableLocation} }
-          </div>
-        </Link> */}
-      </Card>
+        </Hero>
+      </Columns>
     </div>
-  );
+  )
 };
 
 export default Activity;
