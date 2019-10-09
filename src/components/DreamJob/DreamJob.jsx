@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Card } from 'react-bulma-components';
-import './Activity.css';
+import './DreamJob.css';
 
-const Activity = (props) => {
-   
+const DreamJob = (props) => {
+
   return (
-    <div className="ActivityCard column is-one-third">
+    <div className="DreamJobCard column is-one-third">
       <Card>
         <Link to={`/activity/${props.id}`}>
           <div className="card-image" style={{
@@ -27,4 +25,4 @@ const Activity = (props) => {
   );
 };
 
-export default Activity;
+export default DreamJob;

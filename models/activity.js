@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const profileSchema = new mongoose.Schema({
+const activitySchema = new mongoose.Schema({
   name: { type: String, required: true, lowercase: true, unique: true },
   price: String,
   description: {type: CharField(max_length=200), required: true},
@@ -11,3 +11,5 @@ const profileSchema = new mongoose.Schema({
 }, {
     timestamps: true
   });
+
+module.exports = mongoose.model(activitySchema);

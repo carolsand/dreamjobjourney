@@ -1,42 +1,46 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Columns } from 'react-bulma-components';
+
 import NavBar from '../../components/NavBar/NavBar';
 import Activity from '../../components/Activity/Activity';
-import Job from '../../components/Job/Job';
+import DreamJob from '../../components/DreamJob/DreamJob';
 
 class DreamJobJourney extends Component {
   render() {
-    let dreamJobJourney = this.props.dreamJobJourney.map(journey => {
-      return (
-        <div style={{flex: 1}}>
-          <Activity
-            user={user.req.id}
-            id={journey.id}
-            name={journey.name}
-            description={journey.description}
-            loc_city={journey.loc_city}
-            loc_state={journey.loc_state}
-            loc_country={journey.loc_country}
-            activity={journey.activity}
-            // backImage={journey.sprites.back_shiny}
-            // frontImage={journey.sprites.front_shiny}
-          />
-          <Job
-            user={usr.req.id}
-            name={Job.name}
-            description={Job.description}
-            name={Job.name}
+    let experience = this.props.experience.map(exp => {
+   
+    return (
+      <div style={{flex: 1}}>
+        <Activity
+          // user={user.req.id}
+          // id={this.activity.id}
+          name={this.exp.name}
+          description={this.exp.description}
+          loc_city={this.exp.loc_city}
+          loc_state={this.exp.loc_state}
+          loc_country={this.exp.loc_country}
+          // backImage={journey.sprites.back_shiny}
+          // frontImage={journey.sprites.front_shiny}
+        />
+        <DreamJob
+          // user={this.user.req.id}
+          name={this.dreamJob.name}
+          description={this.dreamJob.description}
+          salary={this.dreamJob.salary}
+          location={this.dreamJob.location}
 
-          />
-        </div>
-      )
-    });
+        />
+      </div>
+     )
+    }); 
 
     return (
       <Columns>
-        {dreamJobJourney}
+        {experience}
       </Columns>
     );
   }
 }
+
 export default DreamJobJourney;
