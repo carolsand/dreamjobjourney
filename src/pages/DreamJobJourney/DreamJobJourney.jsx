@@ -8,30 +8,38 @@ import DreamJob from '../../components/DreamJob/DreamJob';
 
 class DreamJobJourney extends Component {
   render() {
+    console.log(" ")
+    console.log(" ")
     console.log("---> this.props: " + JSON.stringify(this.props));
-    let experience = this.props.experience.map(exp => {
-   
+    //let experience = this.props.experience.map(exp => {
+      
+    //console.log("---> this.props.user: " + JSON.stringify(this.props.user));
+    console.log(" ")
+    console.log(" ")
+    let i = 0;
+    let experience = this.props.user.experiences.map(exp => {
+    i = i + 1;
     return (
-      <div style={{flex: 1}}>
+      <div style={{ flex: 1 }} key={i}>
         <Activity
           // user={user.req.id}
           // id={this.activity.id}
-          name={this.exp.name}
-          description={this.exp.description}
-          loc_city={this.exp.loc_city}
-          loc_state={this.exp.loc_state}
-          loc_country={this.exp.loc_country}
+          name={exp.name}
+          description={exp.description}
+          loc_city={exp.city}
+          loc_state={exp.state}
+          loc_country={exp.country}
           // backImage={journey.sprites.back_shiny}
           // frontImage={journey.sprites.front_shiny}
         />
-        <DreamJob
+        {/* <DreamJob
           // user={this.user.req.id}
           name={this.dreamJob.name}
           description={this.dreamJob.description}
           salary={this.dreamJob.salary}
           location={this.dreamJob.location}
 
-        />
+        /> */}
       </div>
      )
     }); 
