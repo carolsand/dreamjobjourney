@@ -8,6 +8,7 @@ import DreamJob from '../../components/DreamJob/DreamJob';
 
 class DreamJobJourney extends Component {
   render() {
+    console.log("---> this.props: " + JSON.stringify(this.props));
     let experience = this.props.experience.map(exp => {
    
     return (

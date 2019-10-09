@@ -16,6 +16,8 @@ let jobsData = require('../../jobs.json');
 class App extends Component {
   constructor() {
     super();
+    console.log("---> activityData: " + JSON.stringify(activityData));
+    console.log("---> jobsData: " + JSON.stringify(jobsData));
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),

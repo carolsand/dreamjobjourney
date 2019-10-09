@@ -9,7 +9,7 @@
       "loc_state": [
         {
           "lat": "poison",
-          "long": "yellowgreen"
+          "color": "yellowgreen"
         },
         {
           "population": "grass",
@@ -38,7 +38,7 @@
       "loc_state": [
         {
           "lat": "poison",
-          "long": "yellowgreen"
+          "color": "yellowgreen"
         },
         {
           "population": "grass",
@@ -69,7 +69,7 @@
       "loc_state": [
         {
           "lat": "poison",
-          "long": "yellowgreen"
+          "color": "yellowgreen"
         },
         {
           "population": "grass",
@@ -100,7 +100,7 @@
       "loc_state": [
         {
           "lat": "fire",
-          "long": "orangered"
+          "color": "orangered"
         }
       ],
       "sprites": {
@@ -127,7 +127,7 @@
       "loc_state": [
         {
           "lat": "fire",
-          "long": "orangered"
+          "color": "orangered"
         }
       ],
       "sprites": {
@@ -154,7 +154,7 @@
       "loc_state": [
         {
           "lat": "fire",
-          "long": "orangered"
+          "color": "orangered"
         }
       ],
       "sprites": {
@@ -181,7 +181,7 @@
       "loc_state": [
         {
           "lat": "water",
-          "long": "deepskyblue"
+          "color": "deepskyblue"
         }
       ],
       "sprites": {
@@ -208,7 +208,7 @@
       "loc_state": [
         {
           "lat": "water",
-          "long": "deepskyblue"
+          "color": "deepskyblue"
         }
       ],
       "sprites": {
@@ -235,7 +235,7 @@
       "loc_state": [
         {
           "lat": "water",
-          "long": "deepskyblue"
+          "color": "deepskyblue"
         }
       ],
       "sprites": {
