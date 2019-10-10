@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import DreamJobJourney from '../../pages/DreamJobJourney/DreamJobJourney';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import NavBar from '../../components/NavBar/NavBar';
 import Experience from '../../components/Experience/Experience';
 import userService from '../../utils/userService';
 import tokenService from '../../utils/tokenService';
@@ -66,6 +67,9 @@ class App extends Component {
 
           <Section>
             <Container>
+              <NavBar 
+                user={this.state.user}
+                />
               <DreamJobJourney
                 handleLogout={this.handleLogout}
                 user={this.state.user}
@@ -88,6 +92,8 @@ class App extends Component {
           <Route exact path='/dream-job-journey' render={() =>
             userService.getUser() ?
               <DreamJobJourney
+                handleLogout={this.handleLogout}
+                user={this.state.user}
               />
               :
               <Redirect to='/' />

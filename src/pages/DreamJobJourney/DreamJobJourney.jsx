@@ -11,18 +11,18 @@ class DreamJobJourney extends Component {
     console.log(" ")
     console.log(" ")
     console.log("---> this.props: " + JSON.stringify(this.props));
-    //let experience = this.props.experience.map(exp => {
-      
-    //console.log("---> this.props.user: " + JSON.stringify(this.props.user));
-    console.log(" ")
+    let experience = this.props.user.experiences ? this.props.user.experiences.map(exp => {
     console.log(" ")
     let i = 0;
-    let experience = this.props.user.experiences.map(exp => {
     i = i + 1;
     return (
       <div style={{ flex: 1 }} key={i}>
+        <NavBar 
+          user={this.state.user} 
+          handleLogout={this.handleLogout}
+        />
         <Activity
-          // user={user.req.id}
+          user={this.state.user}
           // id={this.activity.id}
           name={exp.name}
           description={exp.description}
@@ -39,10 +39,10 @@ class DreamJobJourney extends Component {
           salary={this.dreamJob.salary}
           location={this.dreamJob.location}
 
-        /> */}
+        /> */} 
       </div>
      )
-    }); 
+    }) : <></>
 
     return (
       <Columns>
