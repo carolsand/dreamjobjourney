@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../LoginPage/LoginPage.css';
-import userService from '../../utils/userService';
 
 class ProfilePage extends Component {
-  state = {
-    name: '',
-    email: '',
-    city: '',
-    state: '',
-    country: '',
-  };
-
-  render(){ return (
+  
+  render(){ 
+    return (
 
     <div className="ProfilePage">
       <header className="header-footer">Log In</header>
@@ -29,17 +22,17 @@ class ProfilePage extends Component {
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="loc_city" className="form-control" placeholder="Location City" value={this.state.city} name="loc_city" onChange={this.handleChange} />
+            <input type="city" className="form-control" placeholder="Location City" value={this.state.city} name="city" onChange={this.handleChange} />
           </div>
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="loc_state" className="form-control" placeholder="Location State" value={this.state.state} name="loc_state" onChange={this.handleChange} />
+            <input type="state" className="form-control" placeholder="Location State" value={this.state.state} name="state" onChange={this.handleChange} />
           </div>
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="loc_country" className="form-control" placeholder="Location City" value={this.state.country} name="loc_country" onChange={this.handleChange} />
+            <input type="country" className="form-control" placeholder="Location City" value={this.state.country} name="country" onChange={this.handleChange} />
           </div>
         </div>
         <div className="form-group">
@@ -50,7 +43,7 @@ class ProfilePage extends Component {
         </div>
       </form>
     </div>
-  );
+   );
   }
 }
 

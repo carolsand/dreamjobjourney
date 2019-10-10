@@ -1,22 +1,21 @@
-var Location = require('../models/location');
+var Experience = require('../models/experience');
 
 module.exports = {
-  createUserProfile,
-  getProfile
+  createUserExperience,
+  getUserExperience
 };
 
-async function createUserProfile(req, res) {
-  console.log('user: ', req.user)
-  try {
-    await Profile.create(req.body);
-    // Use the highScores action to return the list
-    profile(req, res);
-  } catch (err) {
-    res.json({ err });
-  }
+
+async function createUserExperience(req, res) {
+  var experience = await new Experience(req.body);
+  experience.save(function (err) {
+    //handle errors
+    if (err) return res.render('/experience/new');
+    res.redirect(`api/dream-job-journey/${experience._id}`);
+  });
 }
 
-async function getProfile(req, res) {
+async function getUserExperience(req, res) {
   const profile = await Profile.find({})
     .sort({ name: 1, email: 1 })
     // Default to a limit of 20 high scores
@@ -24,3 +23,4 @@ async function getProfile(req, res) {
     .limit(req.query.limit || 20);
   res.json(profile);
 }
+

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Columns } from 'react-bulma-components';
 
-import NavBar from '../../components/NavBar/NavBar';
 import Activity from '../../components/Activity/Activity';
 import DreamJob from '../../components/DreamJob/DreamJob';
 
@@ -11,6 +10,7 @@ class DreamJobJourney extends Component {
     console.log(" ")
     console.log(" ")
     console.log("---> this.props: " + JSON.stringify(this.props));
+    let Activity
     let experience = this.props.user.experiences ? this.props.user.experiences.map(exp => {
     console.log("---> contents of experience " + experience);
     let i = 0;
@@ -19,7 +19,7 @@ class DreamJobJourney extends Component {
       <div style={{ flex: 1 }} key={i}>
         <Activity
           user={this.props.user}
-          name={exp.name}
+          name={this.props.exp.name}
           description={exp.description}
           city={exp.city}
           state={exp.state}
@@ -35,7 +35,7 @@ class DreamJobJourney extends Component {
         /> */} 
       </div>
      )
-    }) : <></>
+    }) : <Activity />
 
     return (
       <Columns>

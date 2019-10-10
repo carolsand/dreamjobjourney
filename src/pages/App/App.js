@@ -5,12 +5,12 @@ import DreamJobJourney from '../../pages/DreamJobJourney/DreamJobJourney';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
-import Experience from '../../components/Experience/Experience';
 import userService from '../../utils/userService';
 import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 let activityData = require('../../activity.json');
 let jobsData = require('../../jobs.json');
@@ -24,7 +24,8 @@ class App extends Component {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
       activity: activityData,
-      jobs: jobsData
+      jobs: jobsData,
+      experience: ''
     };
   }
 
@@ -82,6 +83,14 @@ class App extends Component {
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
+          } />
+          <Route exact path='/profile-page' render={() =>
+            this.state.user ?
+            <ProfilePage
+              user={this.state.user}
+            />
+            :
+            <Redirect to='/login' />
           } />
           <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?

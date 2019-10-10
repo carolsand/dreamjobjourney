@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 const experienceSchema = new mongoose.Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
-  name: { type: String, required: true, lowercase: true, unique: true },
-  description: { type: CharField(max_length = 200), required: true },
-  activity: { type: CharField(max_length = 200), required: true },
-  job: { type: CharField(max_length = 200), required: true },
-  city: { type: String, required: true, lowercase: true, unique: true },
-  state: { type: CharField(max_length = 70), required: true, unique: true },
-  country: { type: CharField(max_length = 250), required: true, unique: true },
-}, {
+  name: { type: String, required: true, max: 100 },
+  description: { type: String, required: true, max: 100},
+  activity: { type: String, required: true, max: 100},
+  job: { type: String, required: true, max: 100 },
+  city: { type: String, required: true, max:100 },
+  state: { type: String, required: true, max: 100},
+  country: { type: String, required: true, max: 100 },
+   }, {
     timestamps: true
   });
 
