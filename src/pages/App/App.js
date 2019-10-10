@@ -10,6 +10,7 @@ import userService from '../../utils/userService';
 import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
+import InfoPage from '../InfoPage/InfoPage';
 
 let activityData = require('../../activity.json');
 let jobsData = require('../../jobs.json');
@@ -62,20 +63,13 @@ class App extends Component {
     return (
       <div>
         <header className='header-footer'>R E A C T &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
+          <NavBar 
+            user={this.state.user}
+            handleLogout={this.handleLogout}
+            />
         <Switch>
           <Route exact path='/' render={() =>
-
-          <Section>
-            <Container>
-              <NavBar 
-                user={this.state.user}
-                />
-              <DreamJobJourney
-                handleLogout={this.handleLogout}
-                user={this.state.user}
-              />
-           </Container>
-         </Section>
+           < InfoPage />
           } />
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage
@@ -90,13 +84,12 @@ class App extends Component {
             />
           } />
           <Route exact path='/dream-job-journey' render={() =>
-            userService.getUser() ?
+              this.state.user ?
               <DreamJobJourney
-                handleLogout={this.handleLogout}
                 user={this.state.user}
               />
               :
-              <Redirect to='/' />
+              <Redirect to='/login' />
           } />
         </Switch>
       </div>

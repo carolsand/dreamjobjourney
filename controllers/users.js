@@ -9,8 +9,10 @@ module.exports = {
 
 async function signup(req, res) {
   const user = new User(req.body);
+  const profile = new profile({user: user._id})
   try {
     await user.save();
+    await profile.save();
     const token = createJWT(user);
     res.json({ token });
   } catch (err) {

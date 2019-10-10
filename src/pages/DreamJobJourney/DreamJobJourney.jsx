@@ -12,25 +12,18 @@ class DreamJobJourney extends Component {
     console.log(" ")
     console.log("---> this.props: " + JSON.stringify(this.props));
     let experience = this.props.user.experiences ? this.props.user.experiences.map(exp => {
-    console.log(" ")
+    console.log("---> contents of experience " + experience);
     let i = 0;
     i = i + 1;
     return (
       <div style={{ flex: 1 }} key={i}>
-        <NavBar 
-          user={this.state.user} 
-          handleLogout={this.handleLogout}
-        />
         <Activity
-          user={this.state.user}
-          // id={this.activity.id}
+          user={this.props.user}
           name={exp.name}
           description={exp.description}
-          loc_city={exp.city}
-          loc_state={exp.state}
-          loc_country={exp.country}
-          // backImage={journey.sprites.back_shiny}
-          // frontImage={journey.sprites.front_shiny}
+          city={exp.city}
+          state={exp.state}
+          country={exp.country}
         />
         {/* <DreamJob
           // user={this.user.req.id}

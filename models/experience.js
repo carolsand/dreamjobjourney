@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const experienceSchema = new mongoose.Schema({
-  user: [userSchema],
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
   name: { type: String, required: true, lowercase: true, unique: true },
   description: { type: CharField(max_length = 200), required: true },
   activity: { type: CharField(max_length = 200), required: true },

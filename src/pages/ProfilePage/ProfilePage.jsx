@@ -7,9 +7,9 @@ class ProfilePage extends Component {
   state = {
     name: '',
     email: '',
-    loc_city: '',
-    loc_state: '',
-    loc_country: '',
+    city: '',
+    state: '',
+    country: '',
   };
 
   render(){ return (
@@ -29,17 +29,17 @@ class ProfilePage extends Component {
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="loc_city" className="form-control" placeholder="Location City" value={this.state.loc_city} name="loc_city" onChange={this.handleChange} />
+            <input type="loc_city" className="form-control" placeholder="Location City" value={this.state.city} name="loc_city" onChange={this.handleChange} />
           </div>
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="loc_state" className="form-control" placeholder="Location State" value={this.state.loc_state} name="loc_state" onChange={this.handleChange} />
+            <input type="loc_state" className="form-control" placeholder="Location State" value={this.state.state} name="loc_state" onChange={this.handleChange} />
           </div>
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="loc_country" className="form-control" placeholder="Location City" value={this.state.loc_country} name="loc_country" onChange={this.handleChange} />
+            <input type="loc_country" className="form-control" placeholder="Location City" value={this.state.country} name="loc_country" onChange={this.handleChange} />
           </div>
         </div>
         <div className="form-group">
