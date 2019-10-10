@@ -17,6 +17,8 @@ async function createUserProfile(req, res) {
 }
 
 async function getProfile(req, res) {
+  const token = createJWT(user);
+  if (user)
   const profile = await Profile.find({})
     .sort({ name: 1, email: 1 })
     // Default to a limit of 20 high scores
