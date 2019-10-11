@@ -6,12 +6,11 @@ class ProfilePage extends Component {
   
   render(){ 
     return (
-
-    <div className="ProfilePage">
-      <header className="header-footer">Log In</header>
+      <div className="ProfilePage">
+      <header className="header-footer">Profile Page</header>
       <form className="form-horizontal" onSubmit={this.handleSubmit} >
         <div className="form-group">
-          <div className="col-sm-12">
+          <div className="col-sm-12">[]
             <input type="name" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
           </div>
         </div>
@@ -42,6 +41,7 @@ class ProfilePage extends Component {
           </div>
         </div>
       </form>
+      <h1>Hello I've landed on the profile page</h1>
     </div>
    );
   }

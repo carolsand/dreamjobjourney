@@ -10,6 +10,7 @@ import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
+import FooterPage from '../../components/FooterPage/FooterPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
 let activityData = require('../../activity.json');
@@ -25,6 +26,7 @@ class App extends Component {
       user: userService.getUser(),
       activity: activityData,
       jobs: jobsData,
+      profile: '',
       experience: ''
     };
   }
@@ -60,10 +62,9 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   }
   render() {
-    // let winTries = this.getWinTries();
     return (
       <div>
-        <header className='header-footer'>R E A C T &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
+        <header className='header-footer'> &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
           <NavBar 
             user={this.state.user}
             handleLogout={this.handleLogout}
@@ -100,7 +101,7 @@ class App extends Component {
               :
               <Redirect to='/login' />
           } />
-        </Switch>
+        </Switch> 
       </div>
     );
   }

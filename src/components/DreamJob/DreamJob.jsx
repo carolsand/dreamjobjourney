@@ -5,16 +5,18 @@ import { Card } from 'react-bulma-components';
 import './DreamJob.css';
 
 const DreamJob = (props) => {
-  const printableLocation = props.loc_stateArray.map((loc_state, idx) => {
-    return <p key={idx}><strong>Location:</strong> {loc_state.name}</p>;
-  });
-
+  // const printableLocation = props.state.map((state, idx) => {
+  //   return <p key={idx}><strong>Title:</strong> {jobTitle}</p>;
+  // });
+  console.log('====================================');
+  console.log("These are the props passed from App ----->" + props);
+  console.log('====================================');
   return (
-    <div className="DreamJobCard column is-one-third">
+    <div className="card-image column is-one-third">
       <Card>
         <Link to={`/activity/${props.id}`}>
           <div className="card-image" style={{
-            backgroundColor: props.loc_stateArray[0].color
+            backgroundColor: props.stateArray[0].color
           }}>
             <img src={props.frontImage} alt={props.name} />
           </div>
@@ -22,7 +24,7 @@ const DreamJob = (props) => {
             <h1 class="title is-3">
               {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
             </h1>
-            {printableLocation}
+            {props}
           </div>
         </Link>
       </Card>

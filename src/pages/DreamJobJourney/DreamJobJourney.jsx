@@ -10,21 +10,22 @@ class DreamJobJourney extends Component {
     console.log(" ")
     console.log(" ")
     console.log("---> this.props: " + JSON.stringify(this.props));
-    let experience = this.props.user.experiences ? this.props.user.experiences.map(exp => {
+    let experience = JSON.stringify(this.props);
+    let experiences = this.props.user.experiences ? this.props.user.experiences.map(exp => {
     console.log("---> contents of experience " + experience);
     let i = 0;
     i = i + 1;
     return (
       <div style={{ flex: 1 }} key={i}>
         <Activity
-          user={this.props.user}
-          name={this.props.name}
-          description={props.description}
-          city={props.city}
-          state={props.state}
-          country={props.country}
+          user={this.user}
+          name={this.name}
+          description={this.description}
+          city={this.city}
+          state={this.state}
+          country={this.country}
         />
-        <Job
+        <DreamJob
           // user={this.user.req.id}
           jobTitle={this.props.jobTitle}
           description={this.props.description}
