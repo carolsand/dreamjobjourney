@@ -5,7 +5,7 @@ module.exports = {
   getProfile
 };
 
-async function createUserProfile(req, res) {
+async function createUserProfile(req, res, next) {
   console.log('user: ', req.user)
   try {
     await Profile.create(req.body);
@@ -17,12 +17,9 @@ async function createUserProfile(req, res) {
 }
 
 async function getProfile(req, res) {
-  const token = createJWT(user);
   if (user)
   const profile = await Profile.find({})
     .sort({ name: 1, email: 1 })
-    // Default to a limit of 20 high scores
-    // if not specified in a query string
-    .limit(req.query.limit || 20);
+  console.log(profile);  
   res.json(profile);
 }
