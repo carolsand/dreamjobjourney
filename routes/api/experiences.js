@@ -9,11 +9,11 @@ router.get('/', )
 
 /*---------- Protected Routes ----------*/
 
-router.get('/api/dreamjobjourney', experienceCtrl.index);
-router.get('/api/dreamjobjourney/new', experienceCtrl.new);
-router.post('/api/dreamjobjourney', experienceCtrl.create);
-router.get('/api/:id/dreamjobjourney', experienceCtrl.show);
-router.delete('/api/:id/dreamjobjourney', experienceCtrl.delete);
+router.get('/api/experience', experienceCtrl.index);
+router.get('/api/experience/new', experienceCtrl.new);
+router.post('/api/experience', experienceCtrl.create);
+router.get('/api/:id/experience', experienceCtrl.show);
+router.delete('/api/:id/experience', experienceCtrl.delete);
 
 
 module.exports = router;

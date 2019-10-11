@@ -5,4 +5,5 @@ export function getAllPhotos() {
     fetch(url, { mode: 'cors' })
       .then(res => res.json())
   )
+  console.log(res);
 };

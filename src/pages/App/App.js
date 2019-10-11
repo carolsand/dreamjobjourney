@@ -13,6 +13,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import FooterPage from '../../components/FooterPage/FooterPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
+
 let activityData = require('../../activity.json');
 let jobsData = require('../../jobs.json');
 
