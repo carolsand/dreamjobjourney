@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
+const Profile = require('../models/profile');
 const SECRET = process.env.SECRET;
 
 module.exports = {
@@ -9,7 +10,8 @@ module.exports = {
 
 async function signup(req, res) {
   const user = new User(req.body);
-  const profile = new profile({user: user._id})
+  const profile = new Profile({user: user._id, city:'', state:'', country:'', experience:[] });
+  console.log('--->' + profile);
   try {
     await user.save();
     await profile.save();

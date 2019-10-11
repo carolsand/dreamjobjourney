@@ -1,3 +1,5 @@
+
+// These routes are not needed for profile creation
 var express = require('express');
 var router = express.Router();
 var profileController = require('../controllers/profile');

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const activitySchema = new mongoose.Schema({
-  user: { type: Schema.Types.ObjectId, ref: 'User' },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   name: { type: String, required: true, max: 100},
   price: { any: Schema.Types.Mixed},
   description: { type: String, required: true, max: 100},
