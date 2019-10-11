@@ -1,9 +1,11 @@
 // When using JSX, React must be in scope
+
+// Build Experienc Show page 
 import React from 'react';
 import './Experience.css';
 
 const NewExperience = ({ experience}) => {
-  if (user.profile)
+  if (user)
   let experience = {
     user= user.req.id,
     profile = user,
