@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const activitySchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  name: { type: String, required: true, max: 100},
+  name: { type: String, max: 100},
   price: { any: Schema.Types.Mixed},
-  description: { type: String, required: true, max: 100},
-  city: { type: String, required: true, max: 100 },
-  state: { type: String, required: true, max: 100},
-  country: { type: String, required: true, max: 100 },
+  description: { type: String, max: 100},
+  city: { type: String, max: 100 },
+  state: { type: String, max: 100},
+  country: { type: String, max: 100 },
 
 }, {
     timestamps: true
