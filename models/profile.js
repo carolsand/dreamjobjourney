@@ -5,7 +5,7 @@ const profileSchema = new mongoose.Schema({
   city: { type: String, max: 100 },
   state: { type: String, max: 100},
   country: { type: String, max: 100},
-  experiences: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Experience' }]
+  experiences: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Experience' }] 
 }, {
     timestamps: true
   });

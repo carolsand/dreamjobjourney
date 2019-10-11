@@ -13,6 +13,7 @@ async function signup(req, res) {
   const profile = new Profile({user: user._id, city:'', state:'', country:'', experience:[] });
   console.log('--->' + profile);
   try {
+    user.profile = profile;
     await user.save();
     await profile.save();
     const token = createJWT(user);

@@ -3,6 +3,10 @@ function createProfile() {
   return profile;
 }
 
+function handleCreateProfile() {
+  
+}
+
 export default {
   createProfile,
 };

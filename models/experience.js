@@ -10,6 +10,6 @@ const experienceSchema = new mongoose.Schema({
   country: { type: String, max: 100 },
   }, {
     timestamps: true
-  });
+  }); 
 
 module.exports = mongoose.model('Experience', experienceSchema);

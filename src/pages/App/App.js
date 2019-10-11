@@ -20,8 +20,8 @@ let jobsData = require('../../jobs.json');
 class App extends Component {
   constructor() {
     super();
-    console.log("---> activityData: " + JSON.stringify(activityData));
-    console.log("---> jobsData: " + JSON.stringify(jobsData));
+   //console.log("---> activityData: " + JSON.stringify(activityData));
+    //console.log("---> jobsData: " + JSON.stringify(jobsData));
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
@@ -63,7 +63,7 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   }
   render() {
-    return (
+    return ( 
       <div>
         <header className='header-footer'> &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
           <NavBar 
