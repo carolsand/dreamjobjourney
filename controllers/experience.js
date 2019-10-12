@@ -1,65 +1,50 @@
 var Experience = require('../models/experience');
+var Profile = require('../models/profile');
 
 module.exports = {
-  index,
-  show,
-  new: newExperience,
   create,
-  delete: deleteExperience
+  getAllExperiences,
+  getExperience,
+  // delete: deleteExperience
 };
 
-
-// async function createUserExperience(req, res) {
-//   var experience = await new Experience(req.body);
-//   experience.save(function (err) {
-//     //handle errors
-//     if (err) return res.render('/experience/new');
-//     res.redirect(`api/dream-job-journey/${experience._id}`);
-//   });
-// }
-
-// async function getUserExperience(req, res) {
-//   const profile = await Profile.find({})
-//     .sort({ name: 1, email: 1 })
-//     // Default to a limit of 20 high scores
-//     // if not specified in a query string
-//     .limit(req.query.limit || 20);
-//   res.json(profile);
-// }
-
-function newExperience(req, res) {
-  res.render('/api/experience/new', { title: 'Add Experience' });
-}
-
 async function create(req, res) {
-  var experience = await new Experience(req.body);
-  experience.save(function (err) {
-    //handle errors
-    if (err) return res.render('/api/experience/new');
-    res.redirect(`/api/experience/${experience._id}`);
-  });
+  try {
+    await Experience.create(req.body);
+    // Use the experience action to return the list
+    experience(req, res);
+  } catch (err) {
+    res.json({ err });
+  }
 }
 
-function index(req, res) {
-  Experience.find({}, function (err, experience) {
-    res.render('/api/experience/', { title: 'ALL Experiences', experience });
-  });
+async function getExperience(req, res) {
+  let experience = {
+    name: '',
+    description: '',
+    activity: '',
+    job: '',
+    city: '',
+    state: '',
+    profile: ''
+  };
+  Profile.findOne({user:req.body.userId})
+    .populate('experience')
+    .then(exp => {
+      let experience = exp.experience[exp.experience.length -1];
+      console.log('----> got an experience' + experience);
+      experience.save((err, exp) => {
+        console.log('experience created:', exp._id);
+        prof.exp.push(exp._id)
+        prof.save()
+      })
+    })
+  res.json(experience);
 }
 
-function deleteExperience(req, res) {
-  Experience.deleteOne({ '_id': req.params.id }, function (err) {
-    res.redirect('/api/experience/');
-  });
-}
-
-function show(req, res) {
-  Experience.findById(req.params.id, function (err, experience) {
-    // Ticket.find({}).where('_id').nin(flight.ticket)
-    Activity.find({ experience: req.params.id }, function (err, activity) {
-      console.log(activity);
-      res.render('/api/experience/', {
-        title: 'Activity Detail', experience, activity
-      });
-    });
-  });
+async function getAllExperiences(req, res) {
+  Profile.findOne({user: req.body.userId})
+  console.log('-----> user in getAllExperiences' + user)
+     .populate('experience')
+     .then(profile => res.json(profile.experience));
 }

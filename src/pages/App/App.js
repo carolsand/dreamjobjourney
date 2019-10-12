@@ -6,11 +6,13 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
+import experienceService from '../../utils/experienceService';
 import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
 import FooterPage from '../../components/FooterPage/FooterPage';
+import ExperiencePage from '../ExperiencePage/ExperiencePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
 
@@ -30,6 +32,14 @@ class App extends Component {
       profile: '',
       experience: ''
     };
+  }
+
+  async componentDidMount () {
+    let experience = await experienceService.getAllExperiences(this.props.user);
+    console.log(experience);
+    this.setState({
+      experience: experience
+    });
   }
 
   handleActivitySearch = (e) => {
@@ -86,10 +96,11 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           } />
-          <Route exact path='/profile-page' render={() =>
+          <Route exact path='/experience-page' render={() =>
             this.state.user ?
-            <ProfilePage
+            <ExperiencePage
               user={this.state.user}
+              {...this.state}
             />
             :
             <Redirect to='/login' />
@@ -98,6 +109,7 @@ class App extends Component {
               this.state.user ?
               <DreamJobJourney
                 user={this.state.user}
+                {...this.state}
               />
               :
               <Redirect to='/login' />

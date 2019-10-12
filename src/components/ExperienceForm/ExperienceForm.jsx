@@ -1,6 +1,3 @@
-// When using JSX, React must be in scope
-
-// Build Experienc Show page 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import experienceService from '../../utils/experienceService';
@@ -28,11 +25,11 @@ class ExperienceForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await experienceService.create(this.state);
+      await experienceService.createExperience(this.state);
       // Let <App> know a user has signed up!
-      this.props.handleCreateProfile();
-      // Successfully signed up - show GamePage
-      this.props.history.push('/');
+      this.props.handleCreateExperience();
+      // Successfully created experience - show experience DreamJourneyPage
+      this.props.experience.push('/');
     } catch (err) { 
       // Invalid user data (probably duplicate email)
       this.props.updateMessage(err.message);

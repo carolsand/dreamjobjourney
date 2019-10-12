@@ -6,8 +6,6 @@ const logger = require('morgan');
 const app = express();
 
 require('dotenv').config();
-require('./config/database');
-
 
 // connect to the database with Mongoose
 require('./config/database');
@@ -22,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/experience', require('./routes/api/experience'));
+// app.use('/api/profile', require('./routes/api/profile'));
 
 
 // The following "catch all" route (note the *)is necessary

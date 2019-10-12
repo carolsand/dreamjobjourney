@@ -22,7 +22,7 @@ async function createUserProfile(req, res, next) {
 
 async function getProfile(req, res) {
   if (user)
-  const profile = await Profile.find({})
+  var profile = await Profile.find({})
     .sort({ name: 1, email: 1 })
   console.log(profile);  
   res.json(profile);

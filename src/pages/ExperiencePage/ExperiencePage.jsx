@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
-import './ProfilePage.css';
+import './ExperiencePage.css';
 
-class ProfilePage extends Component {
+class ExperiencePage extends Component {
   constructor(props) {
     super(props);
     this.state = { message: '' }
@@ -14,7 +14,7 @@ class ProfilePage extends Component {
 
   render() {
     return (
-      <div className='ProfilePage'>
+      <div className='ExperiencePage'>
         <ExperienceForm {...this.props} updateMessage={this.updateMessage} />
         <p>{this.state.message}</p>
       </div>
@@ -22,4 +22,4 @@ class ProfilePage extends Component {
   }
 }
 
-export default ProfilePage;
+export default ExperiencePage;
