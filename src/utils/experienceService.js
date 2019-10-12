@@ -5,7 +5,7 @@ export default {
   create,
   getAllExperiences,
   addActivityToExperience,
-  addJobToExperience
+  updateExperience
 };
 
 function index() {

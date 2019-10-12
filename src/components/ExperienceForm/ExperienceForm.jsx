@@ -7,8 +7,8 @@ class ExperienceForm extends Component {
   state = {
     name: '',
     description: '',
-    activity: '',
-    jobTitle: '',
+    activity: [''],
+    jobtitle: '',
     city: '',
     state:'',
     country: ''
@@ -26,12 +26,12 @@ class ExperienceForm extends Component {
     e.preventDefault();
     try {
       await experienceService.create(this.state);
-      // Let <App> know a user has signed up!
+      // Let <App> know a experience was created!
       this.props.create();
-      // Successfully created experience - show experience DreamJourneyPage
+      // Successfully created experience - show experience Experience page
       this.props.experience.push('/');
     } catch (err) { 
-      // Invalid user data (probably duplicate email)
+      // Invalid user data
       this.props.updateMessage(err.message);
     }
   }

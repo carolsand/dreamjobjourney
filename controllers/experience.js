@@ -1,6 +1,7 @@
 var Experience = require('../models/experience');
 var Profile = require('../models/profile');
 var Activity = require('../models/activity');
+var Job = require('../models/job');
 var util = require('util');
 
 module.exports = {
@@ -8,7 +9,6 @@ module.exports = {
   update,
   getAllExperiences,
   getExperience,
-  
   // delete: deleteExperience
 };
 
@@ -46,14 +46,23 @@ async function create(req, res) {
     experienceObj.activity = activitiesArray;
     console.log("Point 6");
     // TODO Do the same thing that you did for Activity for JobTitle
+    /* ----------------------------------------------------------------- */
 
+    var job = new Job();
+    console.log("Point 1");
+    // TODO Set the job.name to whatever the user provided in req.body for the activity section
+    job.name = "";
+    console.log("Point 2")
+    // let experienceObj = req.body; ---> Already defined on line 41
+    console.log("Point 4");
+    experienceObj.job = job.name;
     console.log(" ");
     console.log(" ");
     console.log(" ");
-    console.log("=====================================");
-    console.log("activity: " + util.inspect(activity));
+    console.log("================What's in the experience object? =====================");
+    console.log("job: " + util.inspect(job));
     console.log("activitiesArray: " + util.inspect(activitiesArray));
-    console.log("experienceObj: " + util.inspect(experienceObj));
+    console.log("experienceObj: " + util.inspect(experienceObj.job));
     console.log(" ");
     console.log(" ");
     console.log(" ");
@@ -61,6 +70,7 @@ async function create(req, res) {
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     // TODO Don't forget to save/create JobTitle Object
+    jobtitle = await Job.create(job);
     console.log("experience: " + experience);
     console.log(" ");
     console.log(" ");

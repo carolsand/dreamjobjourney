@@ -27,8 +27,8 @@ class App extends Component {
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
-      activity: activityData,
-      jobs: jobsData,
+      activity: '',
+      job: '',
       profile: '',
       experience: ''
     };
@@ -76,7 +76,7 @@ class App extends Component {
   handCreateExperience = () => {
     this.setState({user: userService.getUser()})
   }
-  
+
   render() {
     return ( 
       <div>
