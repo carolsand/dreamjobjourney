@@ -72,6 +72,11 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
   }
+
+  handCreateExperience = () => {
+    this.setState({user: userService.getUser()})
+  }
+  
   render() {
     return ( 
       <div>
