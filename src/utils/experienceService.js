@@ -3,7 +3,9 @@ const BASE_URL = '/api/experience/';
 export default {
   index,
   create,
-  getAllExperiences
+  getAllExperiences,
+  addActivityToExperience,
+  addJobToExperience
 };
 
 function index() {
@@ -11,6 +13,7 @@ function index() {
 }
 
 function create(experience) {
+  
   const options = {
     method: 'POST',
     headers: {
@@ -20,7 +23,6 @@ function create(experience) {
   };
   return fetch(BASE_URL, options).then(res => res.json());
 }
-
 function getAllExperiences(userId) {
   const options = {
     method: 'POST',
@@ -33,4 +35,33 @@ function getAllExperiences(userId) {
 
   };
   return fetch(BASE_URL, options).then(res => res.json());
+}
+function addActivityToExperience(activity) {
+  // const options = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-type': 'application/json'
+  //   },
+  //   body: JSON.stringify(activity)
+  // };
+  // return fetch(BASE_URL, options).then(res => res.json());
+  
+}
+function addJobToExperience(req, res) {
+  // flight.push(req.body.ticketId);
+  // req.body.experience = req.params.id;
+  // Job.create(req.body, function (err) {
+  //   res.redirect(`/`);
+  // });
+}
+
+function updateExperience(experience) {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(experience)
+  };
+  return fetch(BASE_URL + "update", options).then(res => res.json());
 }

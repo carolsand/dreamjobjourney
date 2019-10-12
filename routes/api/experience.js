@@ -9,5 +9,6 @@ router.get('/', )
 
 router.get('/', experienceCtrl.getAllExperiences);
 router.post('/', experienceCtrl.create);
+router.post('/update', experienceCtrl.update);
 
 module.exports = router;

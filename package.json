@@ -17,7 +17,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "serve-favicon": "^2.5.0",
-    "unirest": "^0.6.0"
+    "unirest": "^0.6.0",
+    "util": "^0.12.1"
   },
   "scripts": {
     "start": "react-scripts start",
