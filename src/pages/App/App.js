@@ -36,7 +36,7 @@ class App extends Component {
 
   async componentDidMount () {
     let experience = await experienceService.getAllExperiences(this.props.user);
-    console.log(experience);
+    console.log('------> experience is mounted' + experience);
     this.setState({
       experience: experience
     });
@@ -99,8 +99,8 @@ class App extends Component {
           <Route exact path='/experience-page' render={() =>
             this.state.user ?
             <ExperiencePage
-              user={this.state.user}
-              {...this.state}
+             user={this.state.user}
+             {...this.state}
             />
             :
             <Redirect to='/login' />

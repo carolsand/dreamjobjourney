@@ -1,4 +1,4 @@
-const BASE_URL = '/api/experience';
+const BASE_URL = '/api/experience/';
 
 export default {
   index,

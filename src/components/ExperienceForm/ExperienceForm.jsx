@@ -25,9 +25,9 @@ class ExperienceForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await experienceService.createExperience(this.state);
+      await experienceService.create(this.state);
       // Let <App> know a user has signed up!
-      this.props.handleCreateExperience();
+      this.props.create();
       // Successfully created experience - show experience DreamJourneyPage
       this.props.experience.push('/');
     } catch (err) { 
@@ -44,25 +44,25 @@ class ExperienceForm extends Component {
     return (
       <div>
         <header className="header-footer">Create Your Dream Experience</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
+        <form className="form-horizontal" onSubmit={this.handleChange} >
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Name" value={this.state.password} name="name" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Description" value={this.state.password} name="description" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="Description" value={this.state.description} name="description" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="activity" value={this.state.password} name="activity" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="activity" value={this.state.activity} name="activity" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="jobTitle" value={this.state.passwordConf} name="jobTitle" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="jobtitle" value={this.state.jobtitle} name="jobtitle" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
@@ -72,7 +72,7 @@ class ExperienceForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="country" value={this.state.passwordConf} name="country" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="state" value={this.state.state} name="state" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
