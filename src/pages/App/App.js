@@ -7,16 +7,13 @@ import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import experienceService from '../../utils/experienceService';
-import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
-import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
 
-let activityData = require('../../activity.json');
-let jobsData = require('../../jobs.json');
+// let activityData = require('../../activity.json');
+// let jobsData = require('../../jobs.json');
 
 class App extends Component {
   constructor() {
@@ -26,9 +23,7 @@ class App extends Component {
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
-      user: [],
-      // experience: experienceService.getAllExperiences(),
-      experience: [],
+      experience: experienceService.getAllExperiences(),
       activity: [],
       job: '',
       profile: '',
@@ -47,16 +42,16 @@ class App extends Component {
     this.setState({ experiences });
   }
 
-  handleActivitySearch = (e) => {
-    this.setState({ user: userService.getUser() });
-    let activity = activityData;
-    if (e.target.value) {
-      activity = activity.filter(p => {
-        return p.name.includes(e.target.value)
-      });
-    }
-    this.setState({ activity })
-  }
+  // handleActivitySearch = (e) => {
+  //   this.setState({ user: userService.getUser() });
+  //   // let activity = activityData;
+  //   if (e.target.value) {
+  //     activity = activity.filter(p => {
+  //       return p.name.includes(e.target.value)
+  //     });
+  //   }
+  //   this.setState({ activity })
+  // }
 
 
   handleLogout = () => {

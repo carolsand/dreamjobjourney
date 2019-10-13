@@ -111,7 +111,8 @@ async function getExperience(req, res) {
 }
 
 async function getAllExperiences(req, res) {
-  const experiences = await Experience.find({ user: req.body.userId})
+  const experiences = await Experience.find({ });
+  console.log('----> experiences from database find' + experiences);
   res.json(experiences);
 }
 

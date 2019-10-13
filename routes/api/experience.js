@@ -3,7 +3,7 @@ const router = express.Router();
 const experienceCtrl = require('../../controllers/experience');
 
 /*---------- Public Routes ----------*/
-router.get('/', )
+// router.get('/', )
 
 /*---------- Protected Routes ----------*/
 
