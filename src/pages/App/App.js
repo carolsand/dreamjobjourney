@@ -10,7 +10,7 @@ import experienceService from '../../utils/experienceService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import InfoPage from '../InfoPage/InfoPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import ExperiencePage from '../ExperiencePage/ExperiencePage';
+import ExperiencePage from '../ExperiencePage/ExperiencePage-debug';
 
 // let activityData = require('../../activity.json');
 // let jobsData = require('../../jobs.json');
@@ -32,7 +32,7 @@ class App extends Component {
 
   async componentDidMount () {
     let experience = await experienceService.getAllExperiences(this.props.user);
-    console.log('------> experience is mounted' + experience);
+    console.log('------> experience is mounted' + JSON.stringify(experience));
     this.setState({
       experience: experience
     });

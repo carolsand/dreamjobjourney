@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { Columns } from 'react-bulma-components';
 
 import Activity from '../../components/Activity/Activity';
-import DreamJob from '../../components/DreamJob/DreamJob';
 import userService from '../../utils/userService';
 import experienceService from '../../utils/experienceService';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
-import ProfilePage from '../ProfilePage/ProfilePage';
 import InfoPage from '../InfoPage/InfoPage';
  
 class DreamJobJourney extends Component {

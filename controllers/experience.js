@@ -87,8 +87,7 @@ async function create(req, res) {
   }
 }
 
-async function getExperience(experienceObj) {
-  let experience = { experienceObj};
+async function getExperience(req, res) {
   Profile.findOne({user:req.body.userId})
     .populate('experience')
     .then(exp => {
@@ -103,11 +102,23 @@ async function getExperience(experienceObj) {
   res.json(experience);
 }
 
-async function getAllExperiences(req, res) {
-  const experiences = await Experience.findById({id: '.id' });
+async function getAllExperiencess(req, res) {
+  const experiences = await Experience.find({})
+   .sort()
   console.log('----> experiences from database find' + experiences);
+
   res.json(experiences);
 }
+
+async function getAllExperiences(req, res) {
+  const experiences = await Experience.find({})
+    .sort({ activity_id: 1, job_id: 1 })
+    // default to a limit of 20 high scores
+    // if not specified in a query string
+    .limit(req.query.limit || 20);
+  res.json(experiences);
+}
+
 
 async function getOneExperience(req, res) {
   Profile.findOne({user: req.body.userId})
