@@ -11,7 +11,9 @@ import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
+import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
 
 let activityData = require('../../activity.json');
 let jobsData = require('../../jobs.json');
@@ -33,13 +35,13 @@ class App extends Component {
     };
   }
 
-  // async componentDidMount () {
-  //   let experience = await experienceService.getAllExperiences(this.props.user);
-  //   console.log('------> experience is mounted' + experience);
-  //   this.setState({
-  //     experience: experience
-  //   });
-  // }
+  async componentDidMount () {
+    let experience = await experienceService.getAllExperiences(this.props.user);
+    console.log('------> experience is mounted' + experience);
+    this.setState({
+      experience: experience
+    });
+  }
 
   handleGetAllExperiences = (experiences) => {
     this.setState({ experiences });
@@ -56,16 +58,6 @@ class App extends Component {
     this.setState({ activity })
   }
 
-  handleExperienceSearch = (e) => {
-    this.setState({ user: experienceService.getAllExperiences()});
-    let job = jobsData;
-    if (e.target.value) {
-      job = job.filter(p => {
-        return p.name.includes(e.target.value)
-      });
-    }
-    this.setState({ job })
-  }
 
   handleLogout = () => {
     userService.logout();
@@ -88,9 +80,12 @@ class App extends Component {
             user={this.state.user}
             handleLogout={this.handleLogout}
             />
-        <Switch>
+         <Switch>
           <Route exact path='/' render={() =>
-           < InfoPage />
+            < InfoPage 
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+            
           } />
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage
@@ -104,28 +99,36 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           } />
+          <Route exact path='/profilepage' render={() =>
+            <ProfilePage
+              user={this.state.user}
+            />
+          } />
           <Route exact path='/experience-page' render={() =>
             this.state.user ?
             <ExperiencePage
              user={this.state.user}
-             experiences={this.state.experiences}
+            //  experiences={this.state.experiences}
              handleGetAllExperiences={this.handleGetAllExperiences}
-            //  {...this.state}
+             {...this.state}
             />
             :
-              <Redirect to='/dream-job-journey' />
+              <Redirect to='/InfoPage' />
           } />
           <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?
               <DreamJobJourney
                 user={this.state.user}
                 {...this.state}
+                experiences 
               />
               :
-              <Redirect to='/login' />
+              <Redirect to='/InfoPage' />
           } />
         </Switch> 
-         <InfoPage />
+        <footer>
+          <InfoPage />
+        </footer>
       </div>
     );
   }

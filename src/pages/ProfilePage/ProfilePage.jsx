@@ -3,14 +3,11 @@ import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
 import './ProfilePage.css';
 
 class ProfilePage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className='ProfilePage'>
-        <ExperienceForm {...this.props} updateMessage={this.updateMessage} />
+        <ExperienceForm 
+        {...this.props} />
       </div>
     );
   }

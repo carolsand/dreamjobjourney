@@ -24,19 +24,25 @@ function create(experience) {
   return fetch(BASE_URL, options).then(res => res.json());
 }
 
-function getAllExperiences(userId) {
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      userId
-    })
+// function getAllExperiences(userId) {
+//   const options = {
+//     method: 'POST',
+//     headers: {
+//       'Content-type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       userId
+//     })
 
-  };
-  return fetch(BASE_URL, options).then(res => res.json());
+//   };
+//   return fetch(BASE_URL, options).then(res => res.json());
+// }
+
+function getAllExperiences() {
+  const url = `${BASE_URL}experience`
+  return fetch(BASE_URL).then(res => res.json());
 }
+
 function addActivityToExperience(activity) {
   // const options = {
   //   method: 'POST',
