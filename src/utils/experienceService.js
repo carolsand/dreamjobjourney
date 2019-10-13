@@ -9,11 +9,11 @@ export default {
 };
 
 function index() {
+  const url = `${BASE_URL}experience`
   return fetch(BASE_URL).then(res => res.json());
 }
 
 function create(experience) {
-  
   const options = {
     method: 'POST',
     headers: {

@@ -8,7 +8,7 @@ class ExperienceForm extends Component {
     name: '',
     description: '',
     activity: [''],
-    jobtitle: '',
+    job: { "jobtitle": "", "salary": "" }, 
     city: '',
     state:'',
     country: '',

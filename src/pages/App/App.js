@@ -24,19 +24,25 @@ class App extends Component {
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
-      experience: experienceService.getAllExperiences(),
-      activity: '',
+      user: [],
+      // experience: experienceService.getAllExperiences(),
+      experience: [],
+      activity: [],
       job: '',
       profile: '',
     };
   }
 
-  async componentDidMount () {
-    let experience = await experienceService.getAllExperiences(this.props.user);
-    console.log('------> experience is mounted' + experience);
-    this.setState({
-      experience: experience
-    });
+  // async componentDidMount () {
+  //   let experience = await experienceService.getAllExperiences(this.props.user);
+  //   console.log('------> experience is mounted' + experience);
+  //   this.setState({
+  //     experience: experience
+  //   });
+  // }
+
+  handleGetAllExperiences = (experiences) => {
+    this.setState({ experiences });
   }
 
   handleActivitySearch = (e) => {
@@ -102,8 +108,9 @@ class App extends Component {
             this.state.user ?
             <ExperiencePage
              user={this.state.user}
-             handleExperienceSearch={this.handleExperienceSearch}
-             {...this.state}
+             experiences={this.state.experiences}
+             handleGetAllExperiences={this.handleGetAllExperiences}
+            //  {...this.state}
             />
             :
               <Redirect to='/dream-job-journey' />

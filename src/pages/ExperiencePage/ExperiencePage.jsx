@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
-import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
-import Activity from '../../components/Activity/Activity';
+import experienceService from '../../utils/experienceService';
 import './ExperiencePage.css';
-import InfoPage from '../InfoPage/InfoPage';
 
 class ExperiencePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: '' }
-  }
 
-  updateMessage = (msg) => {
-    this.setState({ message: msg });
+  async componentDidMount() {
+    const experiences = await experienceService.index();
+    this.props.user.handleGetAllExperiences(experiences);
   }
-
+ 
   render() {
-    return (
-      <div className='ExperiencePage'>
-        <ExperienceForm {...this.props} updateMessage={this.updateMessage} />
-        {/* <Activity /> */}
-        <p>{this.state.message}</p>
+    const experience = this.experiences.map((experience, idx) => (
+      <div key={idx}>
+        {experience}
       </div>
-    );
+    ));
+
+    return (
+      experience
+    )
   }
 }
 

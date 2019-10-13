@@ -9,6 +9,7 @@ module.exports = {
   update,
   getAllExperiences,
   getExperience,
+  getOneExperience
   // delete: deleteExperience
 };
 
@@ -110,8 +111,13 @@ async function getExperience(req, res) {
 }
 
 async function getAllExperiences(req, res) {
+  const experiences = await Experience.find({ user: req.body.userId})
+  res.json(experiences);
+}
+
+async function getOneExperience(req, res) {
   Profile.findOne({user: req.body.userId})
-  console.log('-----> user in getAllExperiences' + user)
+  console.log('-----> user in getOneExperience' + user)
      .populate('experience')
      .then(profile => res.json(profile.experience));
 }

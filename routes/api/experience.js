@@ -7,7 +7,7 @@ router.get('/', )
 
 /*---------- Protected Routes ----------*/
 
-router.get('/', experienceCtrl.getAllExperiences);
+router.get('/experience', experienceCtrl.getAllExperiences);
 router.post('/', experienceCtrl.create);
 router.post('/update', experienceCtrl.update);
 

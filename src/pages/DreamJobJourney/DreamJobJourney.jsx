@@ -5,6 +5,7 @@ import { Columns } from 'react-bulma-components';
 import Activity from '../../components/Activity/Activity';
 import DreamJob from '../../components/DreamJob/DreamJob';
 import userService from '../../utils/userService';
+import experienceService from '../../utils/experienceService';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -13,22 +14,24 @@ class DreamJobJourney extends Component {
   render() {
     console.log(" ")
     console.log("---> this.props: " + JSON.stringify(this.props));
-    console.log("---> this.props.user: " + JSON.stringify(this.props.user));
+    console.log("line 17 ---> this.props.user: " + JSON.stringify(this.props.user));
     // console.log("---> this.props.user.profile: " + JSON.stringify(this.props.user.profile));
     //let experience = JSON.stringify(this.props);
     let i = 0;
     //let experience = this.props.user.profile.experiences ? this.props.user.profile.experiences.map(exp => {
 
     let user = userService.getUser(); 
+    let experiences = experienceService.getAllExperiences();
     // user.populate("profile");
       // this.setState {
       //   experience: experience,
       // }
 
     console.log("---> user: " + JSON.stringify(user));
-    if (this.props.user.profile.experiences && this.props.user.profile.experiences.length > 0) {
-    this.props.user.profile.experiences.map(exp => {
-    console.log("---> in map loop");
+    console.log("---> experiences: " + JSON.stringify(experiences));
+    if (experiences && experiences.length > 0) {
+    this.user.experiences.map(exp => {
+    console.log("---> in map loop" + experiences);
     i = i + 1;
     return (
       <div style={{ flex: 1 }} key={i}>
