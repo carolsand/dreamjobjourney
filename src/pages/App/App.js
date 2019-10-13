@@ -50,7 +50,7 @@ class App extends Component {
     this.setState({ activity })
   }
 
-  handleJobSearch = (e) => {
+  handleExperienceSearch = (e) => {
     this.setState({ user: experienceService.getAllExperiences()});
     let job = jobsData;
     if (e.target.value) {
@@ -102,7 +102,7 @@ class App extends Component {
             this.state.user ?
             <ExperiencePage
              user={this.state.user}
-             handleCreateExperience={this.handleCreateExperience}
+             handleExperienceSearch={this.handleExperienceSearch}
              {...this.state}
             />
             :
@@ -112,7 +112,7 @@ class App extends Component {
               this.state.user ?
               <DreamJobJourney
                 user={this.state.user}
-                // {...this.state}
+                {...this.state}
               />
               :
               <Redirect to='/login' />
