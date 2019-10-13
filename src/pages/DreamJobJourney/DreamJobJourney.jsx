@@ -6,6 +6,7 @@ import Activity from '../../components/Activity/Activity';
 import userService from '../../utils/userService';
 import experienceService from '../../utils/experienceService';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
+import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
 import InfoPage from '../InfoPage/InfoPage';
  
 class DreamJobJourney extends Component {
@@ -56,7 +57,7 @@ class DreamJobJourney extends Component {
    } else { 
     return ( 
       <div style={{ flex: 1 }} key={i}>
-        <InfoPage />
+        <ExperienceForm />
       </div>
     )}
    }
