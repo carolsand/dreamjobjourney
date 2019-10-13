@@ -44,22 +44,27 @@ function getAllExperiences() {
 }
 
 function addActivityToExperience(activity) {
-  // const options = {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-type': 'application/json'
-  //   },
-  //   body: JSON.stringify(activity)
-  // };
-  // return fetch(BASE_URL, options).then(res => res.json());
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(activity)
+  };
+  return fetch(BASE_URL, options).then(res => res.json());
   
 }
-function addJobToExperience(req, res) {
-  // flight.push(req.body.ticketId);
-  // req.body.experience = req.params.id;
-  // Job.create(req.body, function (err) {
-  //   res.redirect(`/`);
-  // });
+
+function addJobToExperience(job) {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(job)
+  };
+  return fetch(BASE_URL, options).then(res => res.json());
+
 }
 
 function updateExperience(experience) {

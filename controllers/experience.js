@@ -52,19 +52,19 @@ async function create(req, res) {
     var job = new Job();
     console.log("Point 1");
     // TODO Set the job.name to whatever the user provided in req.body for the activity section
-    job.name = "";
+    job.jobtitle = "Generic Title";
     console.log("Point 2")
     // let experienceObj = req.body; ---> Already defined on line 41
     console.log("Point 4");
-    experienceObj.job = job.name;
-    experienceObj = experienceObj.activitiesArray + experienceObj.job;
+    experienceObj.jobtitle = job;
+    // experienceObj = experienceObj.activitiesArray + experienceObj.job;
     console.log(" ");
     console.log(" ");
     console.log(" ");
     console.log("================What's in the experience object? =====================");
     console.log("job: " + util.inspect(job));
     console.log("activitiesArray: " + util.inspect(activitiesArray));
-    console.log("experienceObj: " + util.inspect(experienceObj.job));
+    console.log("experienceObj: " + util.inspect(experienceObj.jobtitle));
     console.log(" ");
     console.log(" ");
     console.log(" ");
@@ -72,7 +72,7 @@ async function create(req, res) {
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     // TODO Don't forget to save/create JobTitle Object
-    jobtitle = await Job.create(job);
+    job = await Job.create(job);
     console.log("experience: " + experience);
     console.log(" ");
     console.log(" ");

@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom';
 import experienceService from '../../utils/experienceService';
 
 class ExperienceForm extends Component {
-
-  state = {
+  constructor(props) {
+    super();
+  this.state = {
     name: '',
     description: '',
-    activity: [''],
-    job: { "jobtitle": "", "salary": "" }, 
+    activity: [],
+    jobtitle: {}, 
     city: '',
     state:'',
     country: '',
     passwordConf:''
   };
-
+  }
   handleChange = (e) => {
+    console.log("---> handle change");
     // this.props.updateMessage('');
     this.setState({
       // Using ES2015 Computed Property Names
@@ -24,6 +26,7 @@ class ExperienceForm extends Component {
   }
 
   handleSubmit = async (e) => {
+    console.log("---> handleSubmit");
     e.preventDefault();
     try {
       await experienceService.create(this.state);
@@ -42,6 +45,7 @@ class ExperienceForm extends Component {
   }
 
   render() {
+    console.log("---> ExperienceForm render() ");
     return (
       <div>
         <header className="header-footer">Create Your Dream Experience</header>
@@ -85,6 +89,7 @@ class ExperienceForm extends Component {
         </form>
       </div>
     );
+    console.log("---> after return");
   }
 }
 

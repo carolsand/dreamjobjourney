@@ -4,16 +4,23 @@ import ExperienceForm from '../../components/ExperienceForm/ExperienceForm'
 import './ExperiencePage.css';
 
 class ExperiencePage extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      experiences: experienceService.getAllExperiences
+    }
+  }
   async componentDidMount() {
     const experiences = await experienceService.getAllExperiences();
     this.props.handleGetAllExperiences(experiences);
   }
 
   render() {
-    const experiencesList = this.props.experiences.map((experience, idx) => (
+    const experiencesList = this.experiences.map((experience, idx) => (
       <div key={idx}>
-        {experience}
-        {/* <ExperienceForm {...this.props} /> */}
+         {experience}
+        <ExperienceForm 
+       />
       </div>
     ));
     return experiencesList

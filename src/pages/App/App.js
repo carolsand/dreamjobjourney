@@ -25,7 +25,7 @@ class App extends Component {
       user: userService.getUser(),
       experience: experienceService.getAllExperiences(),
       activity: [],
-      job: '',
+      job: {},
       profile: '',
     };
   }
