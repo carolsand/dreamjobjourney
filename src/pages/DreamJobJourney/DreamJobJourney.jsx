@@ -23,9 +23,9 @@ class DreamJobJourney extends Component {
     let user = userService.getUser(); 
     let experiences = experienceService.getAllExperiences();
     // user.populate("profile");
-      // this.setState {
-      //   experience: experience,
-      // }
+    //   this.setState {
+    //     experience: experience,
+    //   }
 
     console.log("---> user: " + JSON.stringify(user));
     console.log("---> experiences: " + JSON.stringify(experiences));

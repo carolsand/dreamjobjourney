@@ -5,17 +5,8 @@
       "name": "bulbasaur",
       "salary": 64,
       "description": 7,
-      "loc_city": 69,
-      "loc_state": [
-        {
-          "lat": "poison",
-          "long": "yellowgreen"
-        },
-        {
-          "population": "grass",
-          "color": "darkgreen"
-        }
-      ],
+      "city": 69,
+      "state":"NY",
       "sprites": {
         "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png",
         "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"
@@ -34,17 +25,8 @@
       "name": "ivysaur",
       "salary": 142,
       "description": 10,
-      "loc_city": 130,
-      "loc_state": [
-        {
-          "lat": "poison",
-          "long": "yellowgreen"
-        },
-        {
-          "population": "grass",
-          "color": "darkgreen"
-        }
-      ],
+      "city": 130,
+      "state": "CA",
       "sprites": {
         "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/2.png",
         "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png"
@@ -65,8 +47,8 @@
       "name": "venusaur",
       "salary": 236,
       "description": 20,
-      "loc_city": 1000,
-      "loc_state": [
+      "city": 1000,
+      "state": [
         {
           "lat": "poison",
           "long": "yellowgreen"
@@ -96,8 +78,8 @@
       "name": "charmander",
       "salary": 62,
       "description": 6,
-      "loc_city": 85,
-      "loc_state": [
+      "city": 85,
+      "state": [
         {
           "lat": "fire",
           "long": "orangered"
@@ -123,8 +105,8 @@
       "name": "charmeleon",
       "salary": 142,
       "description": 11,
-      "loc_city": 190,
-      "loc_state": [
+      "city": 190,
+      "state": [
         {
           "lat": "fire",
           "long": "orangered"
@@ -150,8 +132,8 @@
       "name": "charizard",
       "salary": 240,
       "description": 17,
-      "loc_city": 905,
-      "loc_state": [
+      "city": 905,
+      "state": [
         {
           "lat": "fire",
           "long": "orangered"
@@ -177,8 +159,8 @@
       "name": "squirtle",
       "salary": 63,
       "description": 5,
-      "loc_city": 90,
-      "loc_state": [
+      "city": 90,
+      "state": [
         {
           "lat": "water",
           "long": "deepskyblue"
@@ -204,8 +186,8 @@
       "name": "wartortle",
       "salary": 142,
       "description": 10,
-      "loc_city": 225,
-      "loc_state": [
+      "city": 225,
+      "state": [
         {
           "lat": "water",
           "long": "deepskyblue"
@@ -231,8 +213,8 @@
       "name": "blastoise",
       "salary": 239,
       "description": 16,
-      "loc_city": 9,
-      "loc_state": [
+      "city": 9,
+      "state": [
         {
           "lat": "water",
           "long": "deepskyblue"

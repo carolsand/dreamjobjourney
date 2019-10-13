@@ -1,41 +1,38 @@
 import React, { Component } from 'react';
 import experienceService from '../../utils/experienceService';
-import ExperienceForm from '../../components/ExperienceForm/ExperienceForm'
 import './ExperiencePage.css';
 import InfoPage from '../InfoPage/InfoPage';
-import { userInfo } from 'os';
 
-// class ExperiencePage extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
+class ExperiencePage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      experiences: experienceService.getAllExperiences,
+    };
+  }
 
-//   async componentDidMount() {
-//     const experiences = await experienceService.index();
-//     this.props.handleGetAllExperiences(experiences);
-//   }
+  async componentDidMount() {
+    console.log('----> props.user' + experiences)
+    const experiences = await experienceService.getAllExperiences();
+    this.props.user.handleGetAllExperiences(experiences);
+  }
 
-//   render() {
-//     const experiencesList = this.props.experiences.map((experience, idx) => (
-//       <div key={idx}>
-//         {experience}
-//         <ExperienceForm {...this.props} />
-//       </div>
-//     ));
-//     return 
-//       < InfoPage />
-//     )
-//   }
-// }
-
-const ExperiencePage = (props) => {
-  return (
-    <div className='ExperiencePage'>
-      <ExperienceForm 
-      
-      />
-
-    </div>
-  )
+  render() {
+    console.log('-----> Experiences' + experiences)
+    if (!experiences && experiences.length < 0) {
+      const experience = this.experiences.map((experience, idx) => (
+        <div key={idx}>
+          {experience}
+        </div>
+      ));
+    } else {
+      return (
+        <div >
+          <InfoPage />
+        </div>
+      )
+    }
+  }
 }
+
 export default ExperiencePage;
