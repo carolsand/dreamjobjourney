@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
+import SignupForm from '../../components/SignupForm/SignupForm';
 import './ProfilePage.css';
 
 class ProfilePage extends Component {
@@ -15,6 +16,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <div className='ProfilePage'>
+        {/* <SignupForm {...this.props} updateMessage={this.updateMessage} /> */}
         <ExperienceForm {...this.props} updateMessage={this.updateMessage} />
         <p>{this.state.message}</p>
       </div>

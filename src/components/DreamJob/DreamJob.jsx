@@ -14,15 +14,13 @@ const DreamJob = (props) => {
   return (
     <div className="card-image column is-one-third">
       <Card>
-        <Link to={`/activity/${props.id}`}>
-          <div className="card-image" style={{
-            backgroundColor: props.stateArray[0].color
-          }}>
-            <img src={props.frontImage} alt={props.name} />
+        <Link to= 'experience'>
+          <div className="card-image" >
+            <h1>Where are the props?</h1>
           </div>
           <div className="card-content">
             <h1 class="title is-3">
-              {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
+              {props.user}
             </h1>
             {props}
           </div>

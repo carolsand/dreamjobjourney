@@ -11,7 +11,6 @@ import tokenService from '../../utils/tokenService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
-import FooterPage from '../../components/FooterPage/FooterPage';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
 
 let activityData = require('../../activity.json');

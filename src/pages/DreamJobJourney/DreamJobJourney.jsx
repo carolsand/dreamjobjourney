@@ -7,7 +7,6 @@ import DreamJob from '../../components/DreamJob/DreamJob';
 import userService from '../../utils/userService';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import InfoPage from '../InfoPage/InfoPage';
  
 class DreamJobJourney extends Component {
   render() {
@@ -55,7 +54,7 @@ class DreamJobJourney extends Component {
    } else { 
     return ( 
       <div style={{ flex: 1 }} key={i}>
-        <ExperiencePage />
+        <ProfilePage />
       </div>
     )}
    }

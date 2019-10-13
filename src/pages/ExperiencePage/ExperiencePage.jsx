@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
+import Activity from '../../components/Activity/Activity';
 import './ExperiencePage.css';
 import InfoPage from '../InfoPage/InfoPage';
 
@@ -17,6 +18,7 @@ class ExperiencePage extends Component {
     return (
       <div className='ExperiencePage'>
         <ExperienceForm {...this.props} updateMessage={this.updateMessage} />
+        {/* <Activity /> */}
         <p>{this.state.message}</p>
       </div>
     );
