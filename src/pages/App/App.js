@@ -106,7 +106,7 @@ class App extends Component {
              {...this.state}
             />
             :
-            <Redirect to='/experience-page' />
+              <Redirect to='/dream-job-journey' />
           } />
           <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?
