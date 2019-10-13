@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import experienceService from '../../utils/experienceService';
 import './ExperiencePage.css';
 import InfoPage from '../InfoPage/InfoPage';
+import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
 
 class ExperiencePage extends Component {
   constructor() {
@@ -28,6 +29,7 @@ class ExperiencePage extends Component {
     } else {
       return (
         <div >
+          <ExperienceForm />
           <InfoPage />
         </div>
       )

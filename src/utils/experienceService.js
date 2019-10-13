@@ -9,7 +9,7 @@ export default {
 };
 
 function index() {
-  const url = `${BASE_URL}experience`
+  const url = `${BASE_URL}`
   return fetch(BASE_URL).then(res => res.json());
 }
 

@@ -57,6 +57,7 @@ async function create(req, res) {
     // let experienceObj = req.body; ---> Already defined on line 41
     console.log("Point 4");
     experienceObj.job = job.name;
+    experienceObj = experienceObj.activitiesArray + experienceObj.job;
     console.log(" ");
     console.log(" ");
     console.log(" ");
@@ -79,23 +80,15 @@ async function create(req, res) {
     console.log(" ");
     // Use the experience action to return the list
     //experience(req, res);
-    res.json({"Success": true});
+    res.json({ experienceObj, "Success": true});
   } catch (err) {
     console.log("Error: " + err);
     res.json({ err });
   }
 }
 
-async function getExperience(req, res) {
-  let experience = {
-    name: '',
-    description: '',
-    activity: '',
-    job: '',
-    city: '',
-    state: '',
-    profile: ''
-  };
+async function getExperience(experienceObj) {
+  let experience = { experienceObj};
   Profile.findOne({user:req.body.userId})
     .populate('experience')
     .then(exp => {
@@ -111,7 +104,7 @@ async function getExperience(req, res) {
 }
 
 async function getAllExperiences(req, res) {
-  const experiences = await Experience.find({ });
+  const experiences = await Experience.findById({id: '.id' });
   console.log('----> experiences from database find' + experiences);
   res.json(experiences);
 }
