@@ -23,6 +23,7 @@ function create(experience) {
   };
   return fetch(BASE_URL, options).then(res => res.json());
 }
+
 function getAllExperiences(userId) {
   const options = {
     method: 'POST',

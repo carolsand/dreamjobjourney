@@ -7,6 +7,7 @@ import DreamJob from '../../components/DreamJob/DreamJob';
 import userService from '../../utils/userService';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import InfoPage from '../InfoPage/InfoPage';
  
 class DreamJobJourney extends Component {
   render() {
@@ -32,8 +33,8 @@ class DreamJobJourney extends Component {
     return (
       <div style={{ flex: 1 }} key={i}>
         <Activity
-          user={this.props.user}
-          name={this.props.user.name}
+          user={this.user}
+          name={this.name}
           description={this.props.user.description}
           city={this.props.user.profile.city}
           state={this.props.user.profile.state}

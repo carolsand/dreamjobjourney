@@ -11,7 +11,8 @@ class ExperienceForm extends Component {
     jobtitle: '',
     city: '',
     state:'',
-    country: ''
+    country: '',
+    passwordConf:''
   };
 
   handleChange = (e) => {
@@ -27,9 +28,9 @@ class ExperienceForm extends Component {
     try {
       await experienceService.create(this.state);
       // Let <App> know a experience was created!
-      this.props.create();
+      this.props.handleCreateExperience();
       // Successfully created experience - show experience Experience page
-      this.props.experience.push('/');
+      this.props.history.push('/');
     } catch (err) { 
       // Invalid user data
       this.props.updateMessage(err.message);
@@ -67,7 +68,7 @@ class ExperienceForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="city" value={this.state.passwordConf} name="city" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="city" value={this.state.city} name="city" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
@@ -77,7 +78,7 @@ class ExperienceForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default" disabled={this.isFormInvalid()}>Your Dream Experience</button>&nbsp;&nbsp;
+              <button type="submit" className="btn btn-default" onClick={this.handleSubmit}>Your Dream Experience</button>&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
             </div>
           </div>

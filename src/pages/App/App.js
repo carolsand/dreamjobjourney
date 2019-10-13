@@ -13,8 +13,6 @@ import { Section, Container } from 'react-bulma-components';
 import InfoPage from '../InfoPage/InfoPage';
 import FooterPage from '../../components/FooterPage/FooterPage';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
-import ProfilePage from '../ProfilePage/ProfilePage';
-
 
 let activityData = require('../../activity.json');
 let jobsData = require('../../jobs.json');
@@ -27,10 +25,10 @@ class App extends Component {
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
+      experience: experienceService.getAllExperiences(),
       activity: '',
       job: '',
       profile: '',
-      experience: ''
     };
   }
 
@@ -54,7 +52,7 @@ class App extends Component {
   }
 
   handleJobSearch = (e) => {
-    this.setState({user: userService.getUser()});
+    this.setState({ user: experienceService.getAllExperiences()});
     let job = jobsData;
     if (e.target.value) {
       job = job.filter(p => {
@@ -73,8 +71,8 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   }
 
-  handCreateExperience = () => {
-    this.setState({user: userService.getUser()})
+  handleCreateExperience = () => {
+    this.setState({user: experienceService.create()})
   }
 
   render() {
@@ -105,21 +103,23 @@ class App extends Component {
             this.state.user ?
             <ExperiencePage
              user={this.state.user}
+             handleCreateExperience={this.handleCreateExperience}
              {...this.state}
             />
             :
-            <Redirect to='/login' />
+            <Redirect to='/experience-page' />
           } />
           <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?
               <DreamJobJourney
                 user={this.state.user}
-                {...this.state}
+                // {...this.state}
               />
               :
               <Redirect to='/login' />
           } />
         </Switch> 
+         <InfoPage />
       </div>
     );
   }

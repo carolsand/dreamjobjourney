@@ -1,9 +1,11 @@
 import React from 'react';
+import Footer from '../Footer';
 
  const InfoPage = () => {
     return (
-      <div>
-        <h1>Info Page</h1>
+      <div className="InfoPage">
+        <Footer />
+        <h2>This Could Be You </h2>
       </div>
     );
   }

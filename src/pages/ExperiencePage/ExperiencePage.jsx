@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
 import './ExperiencePage.css';
+import InfoPage from '../InfoPage/InfoPage';
 
 class ExperiencePage extends Component {
   constructor(props) {
