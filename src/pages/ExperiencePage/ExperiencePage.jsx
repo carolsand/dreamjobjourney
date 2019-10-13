@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import experienceService from '../../utils/experienceService';
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm'
 import './ExperiencePage.css';
-import InfoPage from '../InfoPage/InfoPage';
-import { userInfo } from 'os';
 
 class ExperiencePage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   async componentDidMount() {
-    const experiences = await experienceService.index();
+    const experiences = await experienceService.getAllExperiences();
     this.props.handleGetAllExperiences(experiences);
   }
 
@@ -19,21 +13,21 @@ class ExperiencePage extends Component {
     const experiencesList = this.props.experiences.map((experience, idx) => (
       <div key={idx}>
         {experience}
-        <ExperienceForm {...this.props} />
+        {/* <ExperienceForm {...this.props} /> */}
       </div>
     ));
-    return 
+    return experiencesList
   }
 }
 
-const ExperiencePage = (props) => {
-  return (
-    <div className='ExperiencePage'>
-      <ExperienceForm 
+// const ExperiencePage = (props) => {
+//   return (
+//     <div className='ExperiencePage'>
+//       <ExperienceForm 
       
-      />
+//       />
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 export default ExperiencePage;

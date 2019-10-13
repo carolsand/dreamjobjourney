@@ -10,7 +10,7 @@ import experienceService from '../../utils/experienceService';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import InfoPage from '../InfoPage/InfoPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import ExperiencePage from '../ExperiencePage/ExperiencePage-debug';
+import ExperiencePage from '../ExperiencePage/ExperiencePage';
 
 // let activityData = require('../../activity.json');
 // let jobsData = require('../../jobs.json');
