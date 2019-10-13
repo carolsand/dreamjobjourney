@@ -16,7 +16,7 @@ class ExperienceForm extends Component {
   };
 
   handleChange = (e) => {
-    this.props.updateMessage('');
+    // this.props.updateMessage('');
     this.setState({
       // Using ES2015 Computed Property Names
       [e.target.name]: e.target.value
@@ -33,7 +33,7 @@ class ExperienceForm extends Component {
       this.props.history.push('/');
     } catch (err) { 
       // Invalid user data
-      this.props.updateMessage(err.message);
+      // this.props.updateMessage(err.message);
     }
   }
 
