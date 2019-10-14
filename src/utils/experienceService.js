@@ -1,18 +1,12 @@
 const BASE_URL = '/api/experience/';
 
 export default {
-  // index,
   create,
   getAllExperiences,
   addActivityToExperience,
   updateExperience,
   addJobToExperience
 };
-
-// function index() {
-//   const url = `${BASE_URL}`
-//   return fetch(BASE_URL).then(res => res.json());
-// }
 
 function create(experience) {
   const options = {
@@ -24,20 +18,6 @@ function create(experience) {
   };
   return fetch(BASE_URL, options).then(res => res.json());
 }
-
-// function getAllExperiences(userId) {
-//   const options = {
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       userId
-//     })
-
-//   };
-//   return fetch(BASE_URL, options).then(res => res.json());
-// }
 
 function getAllExperiences() {
   return fetch(BASE_URL).then(res => res.json());

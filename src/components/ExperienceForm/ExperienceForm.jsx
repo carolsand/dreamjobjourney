@@ -87,6 +87,42 @@ class ExperienceForm extends Component {
             </div>
           </div>
         </form>
+        <hr />
+        <form>
+          <label>
+            <span>Job</span>
+            <input name='jobtitle' />
+          </label>
+          <label>
+            <span>Location</span>
+            <select name='location'>
+              <option value="1">Bali</option>
+              <option value="2">Paris</option>
+              <option value="3">Tel Aviv</option>
+              <option value="country">Fiji</option>
+              <option value="county">Brussels</option>
+            </select>
+          </label>
+          <button onClick={this.handleSubmit}>ADD JOB</button>
+        </form>
+        <form>
+          <label>
+            <span>Activity</span>
+            <input name='activity' />
+          </label>
+          <label>
+            <span>Location</span>
+            <select name='location'>
+              <option value="1">Bali</option>
+              <option value="2">Paris</option>
+              <option value="3">Tel Aviv</option>
+              <option value="country">Fiji</option>
+              <option value="county">Brussels</option>
+            </select>
+          </label>
+          <button onClick={this.handleSubmit}>ADD ACTIVITY</button>
+        </form>
+        <hr />
       </div>
     );
     console.log("---> after return");

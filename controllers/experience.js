@@ -42,7 +42,7 @@ async function create(req, res) {
     console.log("job: " + util.inspect(job));
     console.log("activitiesArray: " + util.inspect(activitiesArray));
     console.log("experienceObj: " + util.inspect(experienceObj.jobtitle));
-    console.log("Logged in user ---->" + req.body.user);
+    console.log("Logged in user ---->" + req.body.userId);
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     // TODO Don't forget to save/create JobTitle Object
