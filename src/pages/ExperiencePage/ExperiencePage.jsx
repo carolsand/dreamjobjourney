@@ -1,40 +1,25 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import experienceService from '../../utils/experienceService';
+import ProfilePage from '../ProfilePage/ProfilePage'
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm'
 import './ExperiencePage.css';
 
-class ExperiencePage extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      experiences: experienceService.getAllExperiences
-    }
-  }
-  async componentDidMount() {
-    const experiences = await experienceService.getAllExperiences();
-    this.props.handleGetAllExperiences(experiences);
-  }
+// I want to show all the users experiences on this page
 
-  render() {
-    const experiencesList = this.experiences.map((experience, idx) => (
-      <div key={idx}>
-         {experience}
-        <ExperienceForm 
-       />
-      </div>
-    ));
-    return experiencesList
-  }
-}
+// console.log('the props passed to experience page ---->' + JSON.stringify(this.props));
+const ExperiencePage = (props) => (
+  <div>
+    {props.experiences.map((experience, idx) =>
+      <div
+        name={experience.name}
+        description={experience.description}
+        activity={experience.activity[idx]}
+      />
+    )}
+  </div>
+);
 
-// const ExperiencePage = (props) => {
-//   return (
-//     <div className='ExperiencePage'>
-//       <ExperienceForm 
-      
-//       />
 
-//     </div>
-//   )
-// }
+
 export default ExperiencePage;

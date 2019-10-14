@@ -23,10 +23,10 @@ class App extends Component {
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
-      experience: experienceService.getAllExperiences(),
+      experiences: experienceService.getAllExperiences(),
       activity: [],
       job: {},
-      profile: '',
+      profile: experienceService.getAllExperiences(),
     };
   }
 
@@ -97,6 +97,9 @@ class App extends Component {
           <Route exact path='/profilepage' render={() =>
             <ProfilePage
               user={this.state.user}
+              handleGetAllExperiences={this.handleGetAllExperiences}
+              {...this.state}
+              experiences
             />
           } />
           <Route exact path='/experience-page' render={() =>
@@ -106,6 +109,7 @@ class App extends Component {
             //  experiences={this.state.experiences}
              handleGetAllExperiences={this.handleGetAllExperiences}
              {...this.state}
+             experiences
             />
             :
               <Redirect to='/InfoPage' />

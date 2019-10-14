@@ -1,10 +1,34 @@
 import React, { Component } from 'react';
-import Activity from '../../components/Activity/Activity';
 import userService from '../../utils/userService';
 import experienceService from '../../utils/experienceService';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
-import ExperienceForm from '../../components/ExperienceForm/ExperienceForm';
  
+// console.log("---> this.props in dreamjobjourney page: " + JSON.stringify(props.experiences));
+// console.log("---> this.props.experiences in dreamjobjourney page: " + JSON.stringify(this.props.experiences));
+
+// const DreamJobJourney = (props) => {
+//   const experience = props.experiences.map(exp => (
+//      <DreamJobJourney
+//         {...this.props.experience}
+       
+//       />
+//   ));
+
+//   return (
+//     <div className='Settings'>
+//       <h1>Experiences</h1>
+//       <div>
+//         {experience}
+//       </div>
+//       <div>
+//         {/* <Link className='profile-page' to='/'>Cancel</Link> */}
+//       </div>
+//     </div>
+//   );
+
+// };
+
+
 class DreamJobJourney extends Component {
   render() {
     console.log(" ")
@@ -17,10 +41,6 @@ class DreamJobJourney extends Component {
 
     let user = userService.getUser(); 
     let experiences = experienceService.getAllExperiences();
-    // user.populate("profile");
-    //   this.setState {
-    //     experience: experience,
-    //   }
 
     console.log("---> user: " + JSON.stringify(user));
     console.log("---> experiences: " + JSON.stringify(experiences));
@@ -41,7 +61,7 @@ class DreamJobJourney extends Component {
       console.log("---> else ");
     return ( 
       <div style={{ flex: 1 }} key={i}>
-        <ExperienceForm />
+        <ExperiencePage />
       </div>
     )}
    }

@@ -7,7 +7,7 @@ const experienceCtrl = require('../../controllers/experience');
 
 /*---------- Protected Routes ----------*/
 
-router.get('/experience', experienceCtrl.getAllExperiences);
+router.get('/', experienceCtrl.getAllExperiences);
 router.post('/', experienceCtrl.create);
 router.post('/update', experienceCtrl.update);
 

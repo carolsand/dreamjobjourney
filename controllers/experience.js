@@ -26,39 +26,18 @@ async function update(req, res) {
 
 async function create(req, res) {
   try {
-    // user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    // name: { type: String, max: 100 },
-    // price: { any: Schema.Types.Mixed },
-    // description: { type: String, max: 100 },
-    // city: { type: String, max: 100 },
-    // state: { type: String, max: 100 },
-    // country: { type: String, max: 100 },
     var activity = new Activity();
-    console.log("Point 1");
-    // TODO Set the activity.name to whatever the user provided in req.body for the activity section
     activity.name = "";
-    console.log("Point 2");
     let experienceObj = req.body;
-    console.log("Point 3");
     let activitiesArray = [];
-    console.log("Point 4");
     activitiesArray.push(activity);
-    console.log("Point 5");
     experienceObj.activity = activitiesArray;
-    console.log("Point 6");
-    // TODO Do the same thing that you did for Activity for JobTitle
     /* ----------------------------------------------------------------- */
-
     var job = new Job();
-    console.log("Point 1");
-    // TODO Set the job.name to whatever the user provided in req.body for the activity section
-    job.jobtitle = "Generic Title";
-    console.log("Point 2")
+    job.jobtitle = "";
     // let experienceObj = req.body; ---> Already defined on line 41
     console.log("Point 4");
     experienceObj.jobtitle = job;
-    // experienceObj = experienceObj.activitiesArray + experienceObj.job;
-    console.log(" ");
     console.log(" ");
     console.log(" ");
     console.log("================What's in the experience object? =====================");
@@ -68,13 +47,10 @@ async function create(req, res) {
     console.log(" ");
     console.log(" ");
     console.log(" ");
-    console.log(" ");
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     // TODO Don't forget to save/create JobTitle Object
     job = await Job.create(job);
-    console.log("experience: " + experience);
-    console.log(" ");
     console.log(" ");
     console.log(" ");
     console.log(" ");
