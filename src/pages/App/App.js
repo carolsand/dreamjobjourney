@@ -18,8 +18,6 @@ import ExperiencePage from '../ExperiencePage/ExperiencePage';
 class App extends Component {
   constructor() {
     super();
-   //console.log("---> activityData: " + JSON.stringify(activityData));
-    //console.log("---> jobsData: " + JSON.stringify(jobsData));
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
@@ -33,7 +31,6 @@ class App extends Component {
   async componentDidMount () {
     let experience = await experienceService.getAllExperiences(this.props.user);
     const experiences = await experienceService.getAllExperiences();
-    console.log('------> experience is mounted' + JSON.stringify(experience));
     this.setState({experience, experiences});
   }
 

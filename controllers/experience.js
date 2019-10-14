@@ -26,13 +26,14 @@ async function update(req, res) {
 
 async function create(req, res) {
   try {
+    // creating the activity object associate with the user experience
     var activity = new Activity();
     activity.name = "";
     let experienceObj = req.body;
     let activitiesArray = [];
     activitiesArray.push(activity);
     experienceObj.activity = activitiesArray;
-    /* ----------------------------------------------------------------- */
+    // creating the job object associate with the user experience
     var job = new Job();
     job.jobtitle = "";
     // let experienceObj = req.body; ---> Already defined on line 41
@@ -41,14 +42,11 @@ async function create(req, res) {
     console.log("job: " + util.inspect(job));
     console.log("activitiesArray: " + util.inspect(activitiesArray));
     console.log("experienceObj: " + util.inspect(experienceObj.jobtitle));
-    console.log(" ");
+    console.log("Logged in user ---->" + req.body.user);
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     // TODO Don't forget to save/create JobTitle Object
     job = await Job.create(job);
-    console.log(" ");
-    console.log(" ");
-    console.log(" ");
     // Use the experience action to return the list experience(req, res);
     res.json({ experienceObj, "Success": true});
   } catch (err) {
@@ -73,14 +71,14 @@ async function getExperience(req, res) {
 }
 
 async function getAllExperiences(req, res) {
-  const experiences = await Experience.find({})
-  console.log('----> experiences from database find' + experiences);
+  const experiences = await Experience.find({ })
+  console.log('----> experiences from database find' + JSON.stringify(experiences));
   res.json(experiences);
 }
 
 async function getOneExperience(req, res) {
   Profile.findOne({user: req.body.userId})
-  console.log('-----> user in getOneExperience' + user)
+  console.log('-----> user in getOneExperience'+ req.body.userId)
      .populate('experience')
      .then(profile => res.json(profile.experience));
 }
