@@ -12,9 +12,6 @@ import InfoPage from '../InfoPage/InfoPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
 
-// let activityData = require('../../activity.json');
-// let jobsData = require('../../jobs.json');
-
 class App extends Component {
   constructor() {
     super();
@@ -115,8 +112,5 @@ class App extends Component {
     );
   }
 }
-
-
-
 
 export default App;

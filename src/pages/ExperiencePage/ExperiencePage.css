@@ -6,13 +6,13 @@
   margin-bottom: 10px;
 }
 
-.ExperiencePage-link-margin {
+/* .ExperiencePage-link-margin {
   margin-bottom: 10px;
-}
+} */
 
 span {
   display: block;
-  flex-flow: column nowrap;
+  flex-flow: row;
   justify-content: center;
   margin-left: 10px;
 }
@@ -26,15 +26,15 @@ span {
 }
 
 .ExperiencePage-experience {
-  padding: 20px;
+  padding: 2%;
   border-radius: 15px;
   text-align: justify;
-  width: 60%;
+  width: 30%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 10%;
   background-color: rgba(22, 37, 37, 0.9);
-  color: rgba(224, 193, 193, 0.7);
+  color: rgba(224, 193, 193, 0.8);
 }
 
 .ExperiencePage {

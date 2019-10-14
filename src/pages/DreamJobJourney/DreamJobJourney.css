@@ -7,22 +7,23 @@ span {
 
 .DreamJobJourneyPage {
   display: flex;
-  height: 50%;
+  height: 20%;
   justify-content: center;
   align-items: center;
   font-size: 15px;
 }
 
 .DreamJobJourneyPage-experience {
-  padding: 10px;
-  border-radius: 25px;
+  padding: 2%;
+  border-radius: 5%;
   text-align: justify;
-  width: 60%;
+  width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr 3fr 3fr;
-  grid-gap: 20px;
-  background-color: darkslategrey;
-  color: white;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+  grid-gap: 4%;
+  background-color: rgb(2, 37, 37);
+  /* background-color: darkslategrey; */
+  color: rgba(174, 177, 173, 0.4);
 }
 
 .DreamJobJourneyPage {
