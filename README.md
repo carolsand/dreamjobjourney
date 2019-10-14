@@ -1,42 +1,38 @@
-# Building Dream Job Journey App
+# Dream Job Journey
 
-## To Do Next
-Todos:
- - Build client side experience creation flow
-   - experience create form
-   - after creation, route to experience#show page (use react router)
- - On experience#show encourage user to add activities and potential jobs to their experience
-   - pull all jobs and activities from the json files, filter them into dropdowns based on location
-   - user should be able to choose pertinent activities and jobs and save them to the experience
- - Ensure only authorized users are taking certain actions
- - Front end adjustments
+This Could Be YOU
+
+**Descripton**
+
+Dream your wildest dreams when checking out locations for potential employment. Enter your favorite activity with your dream job and where you want to adventure and get a glimps of what life will be like for you. It's your own personal job trip diary.
+
+**Screenshots**
+
+  ![Home](./public/images/HomePage.png)
+  ![Log In](./public/images/SignupPage.png)
+  ![Landing](./public/images/LandingPage.png)
 
 
+**Technologies Used**
+  1. HTML 
+  2. CSS 
+  3. MongoDB 
+  4. Mongoose 
+  5. JavaScript 
+  6. Express
+  7. REACT
+
+**Getting Started** 
+[Dream Job Journey](https://dreamjobjourney.herokuapp.com/)
+
+Create a user by signing up to get started.
 
 
-### This Infomation will be deletd from this page
-In the project directory, you can run:
+**Next Steps**
 
-### `npm start`
+**Planned future enhancements (icebox items)**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
+1. Allow Custom jobs and activites
+2. Allow users to store more details about their trip.
+3. Allow users to search for activites by location.
+4. Alow users to see pictures of or video of activities and possible options to contact.
