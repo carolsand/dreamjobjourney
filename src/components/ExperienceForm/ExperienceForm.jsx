@@ -24,6 +24,15 @@ class ExperienceForm extends Component {
       [e.target.name]: e.target.value
     });
   }
+  handleUpdate = async (e) => {
+    console.log("-----> update job and activity" );
+    e.preventDefault();
+    try {
+      await experienceService.addJobToExperience(this.state);
+    }catch (err){
+      console.log('Invalid user data');
+    }
+  }
 
   handleSubmit = async (e) => {
     console.log("---> handleSubmit");
@@ -62,16 +71,6 @@ class ExperienceForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="activity" value={this.state.activity} name="activity" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="jobtitle" value={this.state.jobtitle} name="jobtitle" onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
               <input type="text" className="form-control" placeholder="city" value={this.state.city} name="city" onChange={this.handleChange} />
             </div>
           </div>
@@ -96,9 +95,9 @@ class ExperienceForm extends Component {
           <label>
             <span>Location</span>
             <select name='location'>
-              <option value="1">Bali</option>
-              <option value="2">Paris</option>
-              <option value="3">Tel Aviv</option>
+              <option value="country">Bali</option>
+              <option value="country">Paris</option>
+              <option value="country">Tel Aviv</option>
               <option value="country">Fiji</option>
               <option value="county">Brussels</option>
             </select>

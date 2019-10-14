@@ -101,8 +101,7 @@ class App extends Component {
           <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?
               <DreamJobJourney
-                user={this.state.user}
-                experiences={this.state.experiences}
+              experiences={this.state.experiences}
                  
               />
               :
