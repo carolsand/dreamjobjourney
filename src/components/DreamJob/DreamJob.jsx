@@ -5,12 +5,6 @@ import { Card } from 'react-bulma-components';
 import './DreamJob.css';
 
 const DreamJob = (props) => {
-  // const printableLocation = props.state.map((state, idx) => {
-  //   return <p key={idx}><strong>Title:</strong> {jobTitle}</p>;
-  // });
-  console.log('====================================');
-  console.log("These are the props passed from App ----->" + props);
-  console.log('====================================');
   return (
     <div className="card-image column is-one-third">
       <Card>

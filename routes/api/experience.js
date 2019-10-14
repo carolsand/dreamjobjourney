@@ -11,6 +11,5 @@ router.get('/:id', experienceCtrl.getOneExperience);
 router.get('/', experienceCtrl.getAllExperiences);
 router.post('/', experienceCtrl.create);
 router.post('/:id', experienceCtrl.update);
-// router.post('/:id', experienceCtrl.deleteExperience);
 
 module.exports = router;

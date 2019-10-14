@@ -11,7 +11,6 @@ module.exports = {
 async function signup(req, res) {
   const user = new User(req.body);
   const profile = new Profile({user: user._id, city:'', state:'', country:'', experience:[] });
-  console.log('--->' + profile);
   try {
     user.profile = profile;
     await user.save();

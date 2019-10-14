@@ -3,11 +3,7 @@ import { Section, Hero, Container, Columns } from 'react-bulma-components';
 import './Activity.css';
 
 const Activity = (props) => {
-  console.log("Props in activity.jsx --->" + JSON.stringify(props));
-  //const printableLocation = props.loc_stateArray.map((loc_state, idx) => {
-    //return <p key={idx}><strong>Location:</strong> {loc_state.name}</p>;
-  //});
-   
+  console.log("Props in activity.jsx --->" + JSON.stringify(props));   
   return (
     <div>
       <h1>Activity Page</h1>

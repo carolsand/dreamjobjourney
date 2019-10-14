@@ -50,7 +50,6 @@ class ExperienceForm extends Component {
   }
 
   render() {
-    console.log("---> ExperienceForm render() ");
     return (
       <div>
       <header className="header">Create Your Dream Experience</header>

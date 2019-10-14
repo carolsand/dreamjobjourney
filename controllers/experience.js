@@ -38,13 +38,8 @@ async function create(req, res) {
     job.jobtitle = "";
     // let experienceObj = req.body; ---> Already defined on line 41
     experienceObj.jobtitle = job;
-    console.log("================What's in the experience object? =====================");
-    console.log("job: " + util.inspect(job));
-    console.log("activitiesArray: " + util.inspect(activitiesArray));
-    console.log("experienceObj: " + util.inspect(experienceObj.jobtitle));
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
-    // TODO Don't forget to save/create JobTitle Object
     job = await Job.create(job);
     // Use the experience action to return the list experience(req, res);
     res.json({ experienceObj, "Success": true});
@@ -59,9 +54,7 @@ async function getExperience(req, res) {
     .populate('experience')
     .then(exp => {
       let experience = exp.experience[exp.experience.length -1];
-      console.log('----> got an experience' + experience);
       experience.save((err, exp) => {
-        console.log('experience created:', exp._id);
         prof.exp.push(exp._id)
         prof.save()
       })
@@ -71,13 +64,12 @@ async function getExperience(req, res) {
 
 async function getAllExperiences(req, res) {
   const experiences = await Experience.find(req.params._id)
-  console.log('----> experiences from database find' + JSON.stringify(experiences));
   res.json(experiences);
 }
 
 async function getOneExperience(req, res) {
   Experience.findById(req.params._id, experience._id)
-  console.log('-----> user in getOneExperience' + req.params._id)
+
      .populate('experience')
      .then(experience => res.json(experience));
 }
