@@ -7,8 +7,9 @@ const experienceCtrl = require('../../controllers/experience');
 
 /*---------- Protected Routes ----------*/
 
-router.get('/', experienceCtrl.getAllExperiences);
+router.get('/:id', experienceCtrl.getAllExperiences);
 router.post('/', experienceCtrl.create);
-router.post('/update', experienceCtrl.update);
+router.post('/:id', experienceCtrl.update);
+// router.post('/:id', experienceCtrl.deleteExperience);
 
 module.exports = router;

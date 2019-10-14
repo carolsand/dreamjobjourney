@@ -3,6 +3,7 @@ const BASE_URL = '/api/experience/';
 export default {
   create,
   getAllExperiences,
+  deleteExperience,
   addActivityToExperience,
   updateExperience,
   addJobToExperience
@@ -50,6 +51,17 @@ function addJobToExperience(job) {
 function updateExperience(experience) {
   const options = {
     method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(experience)
+  };
+  return fetch(BASE_URL + "update", options).then(res => res.json());
+}
+
+function deleteExperience(experience) {
+  const options = {
+    method: 'DELETE',
     headers: {
       'Content-type': 'application/json'
     },
