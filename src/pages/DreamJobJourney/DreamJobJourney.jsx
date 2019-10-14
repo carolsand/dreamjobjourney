@@ -4,7 +4,7 @@ import InfoPage from '../InfoPage/InfoPage';
  
 const DreamJobJourney = (props) => (
   <div className="DreamJobJourneyPage">
-    <div className="DreamJobJourneyPage">
+    <div className="DreamJobJourneyPage-experience">
       {props.experiences.map((experience, idx) =>
         <>
           <div className="DreamJobJourneyPage-experience">

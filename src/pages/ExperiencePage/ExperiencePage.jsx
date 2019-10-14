@@ -5,7 +5,7 @@ import './ExperiencePage.css';
 // I want to show all the users experiences on this page
 
 const ExperiencePage = (props) => (
-  <div className="ExperiencePage">
+  <div >
     <ExperienceForm
     />
     <div className="ExperiencePage">

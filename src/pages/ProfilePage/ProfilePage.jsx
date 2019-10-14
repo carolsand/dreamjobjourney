@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import experienceService from '../../utils/experienceService';
 import './ProfilePage.css';
 
-// console.log('Props passed to profile page ------->'+ JSON.stringify(props));
 const ProfilePage = (props) => (
-  <div>
+  <div className="ProfilePage">
     {props.experiences.map((experience, idx) =>
       <>
         <p>{experience.name}</p>
