@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import experienceService from '../../utils/experienceService';
+import React from 'react';
 import './ProfilePage.css';
 
 const ProfilePage = (props) => (
   <div className="ProfilePage">
     {props.experiences.map((experience, idx) =>
       <>
-        <p>{experience.name}</p>
-        <p>{experience.description}</p>
-        <p>{experience.activity[idx]}</p>
+        <div className="ProfilePage-experience">
+          <span>{experience.name}</span>
+          <span>{experience.description}</span>
+          <span>{experience.activity[idx]}</span>
+        </div>
       </>
     )}
   </div>

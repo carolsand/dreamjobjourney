@@ -124,7 +124,6 @@ class ExperienceForm extends Component {
         </form>
       </div>
     );
-    console.log("---> after return");
   }
 }
 

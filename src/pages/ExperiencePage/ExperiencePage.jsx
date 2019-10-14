@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ExperienceForm from '../../components/ExperienceForm/ExperienceForm'
 import './ExperiencePage.css';
 

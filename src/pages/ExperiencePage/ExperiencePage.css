@@ -27,11 +27,11 @@ span {
 
 .ExperiencePage-experience {
   padding: 20px;
-  border-radius: 25px;
+  border-radius: 15px;
   text-align: justify;
   width: 60%;
   display: grid;
-  grid-template-columns: 1fr 1fr 3fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   background-color: rgba(22, 37, 37, 0.9);
   color: rgba(224, 193, 193, 0.7);

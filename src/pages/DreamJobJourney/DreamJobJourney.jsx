@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import ExperiencePage from '../ExperiencePage/ExperiencePage';
-import InfoPage from '../InfoPage/InfoPage';
+import React from 'react';
+import './DreamJobJourney.css';
  
 const DreamJobJourney = (props) => (
-  <div className="DreamJobJourneyPage">
+  <div >
     <div className="DreamJobJourneyPage-experience">
       {props.experiences.map((experience, idx) =>
         <>
