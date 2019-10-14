@@ -36,16 +36,11 @@ async function create(req, res) {
     var job = new Job();
     job.jobtitle = "";
     // let experienceObj = req.body; ---> Already defined on line 41
-    console.log("Point 4");
     experienceObj.jobtitle = job;
-    console.log(" ");
-    console.log(" ");
     console.log("================What's in the experience object? =====================");
     console.log("job: " + util.inspect(job));
     console.log("activitiesArray: " + util.inspect(activitiesArray));
     console.log("experienceObj: " + util.inspect(experienceObj.jobtitle));
-    console.log(" ");
-    console.log(" ");
     console.log(" ");
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
@@ -54,8 +49,7 @@ async function create(req, res) {
     console.log(" ");
     console.log(" ");
     console.log(" ");
-    // Use the experience action to return the list
-    //experience(req, res);
+    // Use the experience action to return the list experience(req, res);
     res.json({ experienceObj, "Success": true});
   } catch (err) {
     console.log("Error: " + err);
@@ -78,23 +72,11 @@ async function getExperience(req, res) {
   res.json(experience);
 }
 
-async function getAllExperiencess(req, res) {
-  const experiences = await Experience.find({})
-   .sort()
-  console.log('----> experiences from database find' + experiences);
-
-  res.json(experiences);
-}
-
 async function getAllExperiences(req, res) {
   const experiences = await Experience.find({})
-    .sort({ activity_id: 1, job_id: 1 })
-    // default to a limit of 20 high scores
-    // if not specified in a query string
-    .limit(req.query.limit || 20);
+  console.log('----> experiences from database find' + experiences);
   res.json(experiences);
 }
-
 
 async function getOneExperience(req, res) {
   Profile.findOne({user: req.body.userId})

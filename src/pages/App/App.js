@@ -23,7 +23,7 @@ class App extends Component {
     this.state = {
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
-      experiences: experienceService.getAllExperiences(),
+      experiences: [],
       activity: [],
       job: {},
       profile: experienceService.getAllExperiences(),
@@ -32,26 +32,15 @@ class App extends Component {
 
   async componentDidMount () {
     let experience = await experienceService.getAllExperiences(this.props.user);
+    const experiences = await experienceService.getAllExperiences();
     console.log('------> experience is mounted' + JSON.stringify(experience));
-    this.setState({
-      experience: experience
-    });
+    this.setState({experience, experiences});
   }
 
   handleGetAllExperiences = (experiences) => {
-    this.setState({ experiences });
+    const experience = experienceService.getAllExperiences();
+    this.setState({ experience, experiences });
   }
-
-  // handleActivitySearch = (e) => {
-  //   this.setState({ user: userService.getUser() });
-  //   // let activity = activityData;
-  //   if (e.target.value) {
-  //     activity = activity.filter(p => {
-  //       return p.name.includes(e.target.value)
-  //     });
-  //   }
-  //   this.setState({ activity })
-  // }
 
 
   handleLogout = () => {
@@ -98,18 +87,16 @@ class App extends Component {
             <ProfilePage
               user={this.state.user}
               handleGetAllExperiences={this.handleGetAllExperiences}
-              {...this.state}
-              experiences
+              
             />
           } />
           <Route exact path='/experience-page' render={() =>
             this.state.user ?
             <ExperiencePage
              user={this.state.user}
-            //  experiences={this.state.experiences}
+             experiences={this.state.experiences}
              handleGetAllExperiences={this.handleGetAllExperiences}
-             {...this.state}
-             experiences
+             
             />
             :
               <Redirect to='/InfoPage' />
@@ -118,8 +105,8 @@ class App extends Component {
               this.state.user ?
               <DreamJobJourney
                 user={this.state.user}
-                {...this.state}
-                experiences 
+                experiences={this.state.experiences}
+                 
               />
               :
               <Redirect to='/InfoPage' />

@@ -7,19 +7,21 @@ import './ExperiencePage.css';
 
 // I want to show all the users experiences on this page
 
-// console.log('the props passed to experience page ---->' + JSON.stringify(this.props));
 const ExperiencePage = (props) => (
   <div>
+    <ExperienceForm
+    />
     {props.experiences.map((experience, idx) =>
-      <div
-        name={experience.name}
-        description={experience.description}
-        activity={experience.activity[idx]}
-      />
+    <>
+      <p>{experience.name}</p>
+      <p>{experience.description}</p>
+      <p>{experience.activity[idx]}</p>
+      <p>{experience.jobtitle}</p>
+      <p>{experience.city}</p>
+      <p>{experience.state}</p>
+      </>
     )}
   </div>
 );
-
-
 
 export default ExperiencePage;
