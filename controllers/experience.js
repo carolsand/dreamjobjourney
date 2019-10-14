@@ -42,7 +42,6 @@ async function create(req, res) {
     console.log("job: " + util.inspect(job));
     console.log("activitiesArray: " + util.inspect(activitiesArray));
     console.log("experienceObj: " + util.inspect(experienceObj.jobtitle));
-    console.log("Logged in user ---->" + req.body.userId);
     let experience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     // TODO Don't forget to save/create JobTitle Object
@@ -77,7 +76,7 @@ async function getAllExperiences(req, res) {
 }
 
 async function getOneExperience(req, res) {
-  Experience.findByIdAndRemove(req.params._id)
+  Experience.findById(req.params._id, experience._id)
   console.log('-----> user in getOneExperience' + req.params._id)
      .populate('experience')
      .then(experience => res.json(experience));

@@ -1,33 +1,42 @@
-.ExperiencePage {
+.header {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
-input {
+.ExperiencePage-link-margin {
+  margin-bottom: 10px;
+}
+
+span {
   display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  margin: 0.5rem 0 0 auto;
-  padding: 0.4rem;
-  background-color: #dfedf5;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-left: 10px;
 }
 
-button {
-   display: block;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 1rem;
-   margin: 0.5rem 0 0 auto;
-   padding: 0.4rem;
-   background-color: #6cbdec;
-   color: white;
-   border: none;
-   outline: none;
+.ExperiencePage {
+  display: flex;
+  height: 40%;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }
- 	
-button:hover {
-   color: white;
-   background-color: #737495;
+
+.ExperiencePage-experience {
+  padding: 20px;
+  border-radius: 25px;
+  text-align: justify;
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 3fr;
+  grid-gap: 20px;
+  background-color: rgba(22, 37, 37, 0.9);
+  color: rgba(224, 193, 193, 0.7);
+}
+
+.ExperiencePage {
+  color: rgb(56, 2, 2);
 }
