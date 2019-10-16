@@ -6,7 +6,7 @@ const DreamJobJourney = (props) => (
     <div className="DreamJobJourneyPage-experience">
       {props.experiences.map((experience, idx) =>
         <>
-          <div className="DreamJobJourneyPage-experience" key={idx}>
+          <div className="DreamJobJourneyPage-experience" >
             <span key={1}>{experience.name}</span>
             <span key={2}>{experience.description}</span>
             <span key={3}>{experience.activity[idx]}</span>
