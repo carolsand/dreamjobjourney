@@ -7,11 +7,11 @@ const DreamJobJourney = (props) => (
       {props.experiences.map((experience, idx) =>
         <>
           <div className="DreamJobJourneyPage-experience" >
-            <span key={1}>{experience.name}</span>
-            <span key={2}>{experience.description}</span>
-            <span key={3}>{experience.activity[idx]}</span>
-            <span key={4}>{experience.city}</span>
-            <span key={5}>{experience.state}</span>
+            <span key={idx}>{experience.name}</span>
+            <span key={idx}>{experience.description}</span>
+            <span key={idx}>{experience.activity[idx]}</span>
+            <span key={idx}>{experience.city}</span>
+            <span key={idx}>{experience.state}</span>
           </div>
         </>
       )}

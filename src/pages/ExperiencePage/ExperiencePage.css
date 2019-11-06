@@ -26,13 +26,11 @@ span {
 }
 
 .ExperiencePage-experience {
+  display: flex;
   padding: 2%;
-  border-radius: 15px;
-  text-align: justify;
-  width: 30%;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-gap: 10%;
+  border-radius: 15%;
+  text-align: center;
+  width: 20%;
   background-color: rgba(22, 37, 37, 0.9);
   color: rgba(224, 193, 193, 0.8);
 }
