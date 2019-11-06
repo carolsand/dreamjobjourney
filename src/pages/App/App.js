@@ -36,6 +36,11 @@ class App extends Component {
     this.setState({ experience, experiences });
   }
 
+  getNewExperience = () => {
+    const experience = experienceService.getOneExperience();
+    this.setState({experience});
+  }
+
 
   handleLogout = () => {
     userService.logout();

@@ -69,7 +69,6 @@ async function getAllExperiences(req, res) {
 
 async function getOneExperience(req, res) {
   Experience.findById(req.params._id, experience._id)
-
      .populate('experience')
      .then(experience => res.json(experience));
 }

@@ -12,11 +12,11 @@ const ExperiencePage = (props) => (
       {props.experiences.map((experience, idx) =>
         <>
           <div className="ExperiencePage-experience" >
-            <span key={idx}>{experience.name}</span>
-            <span key={idx} >{experience.description}</span>
-            <span key={idx}>{experience.activity[idx]}</span>
-            <span key={idx}>{experience.city}</span>
-            <span key={idx}>{experience.state}</span>
+            <span key={idx}>Name: {experience.name}</span>
+            <span key={idx}> {experience.description}</span>
+            <span key={idx}>Activity: {experience.activity[idx]}</span>
+            <span key={idx}>City: {experience.city}</span>
+            <span key={idx}>State: {experience.state}</span>
           </div>
         </>
       )}
