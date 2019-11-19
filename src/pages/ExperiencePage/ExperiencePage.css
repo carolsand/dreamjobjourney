@@ -1,22 +1,3 @@
-.header {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* .ExperiencePage-link-margin {
-  margin-bottom: 10px;
-} */
-
-span {
-  display: block;
-  flex-flow: row;
-  justify-content: center;
-  margin-left: 10px;
-}
-
 .ExperiencePage {
   display: flex;
   height: 40%;
@@ -25,17 +6,16 @@ span {
   font-size: 15px;
 }
 
-/* main {
-  display: inline-block;
+main {
+  /* display: inline-block; */
   position: absolute;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  /* background-image:url(../images/katie-smith-uQs1802D0CQ-unsplash.jpg); 
-} */
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  /* width: 100%; */
+  /* background-image:url(../../images/logoPetraTrek2TheCity.jpg); */
+} 
 
-.ExperiencePage-experience {
+/* .ExperiencePage-experience {
   display: flex;
   padding: 2%;
   border-radius: 15%;
@@ -43,8 +23,19 @@ span {
   width: 20%;
   background-color: rgba(22, 37, 37, 0.9);
   color: rgba(224, 193, 193, 0.8);
-}
+} */
 
-.ExperiencePage {
-  color: rgba(56, 2, 2, .1);
+.ExperiencePage-experience {
+  display: grid;
+  grid-column: span;
+  /* grid-auto-rows: 2vmin; */
+  border-radius: 5%;
+  text-align: justify;
+  width: 28em;
+  /* grid-template-columns: 2fr 2fr 2fr; */
+  grid-gap: .05%;
+  background-color: rgba(0, 0, 0, 0.9);
+  /* background-color: darkslategrey; */
+  color: rgb(44, 117, 20);
+  /* opacity: .8; */
 }
