@@ -6,7 +6,8 @@ export default {
   deleteExperience,
   addActivityToExperience,
   updateExperience,
-  addJobToExperience
+  addJobToExperience,
+  getNewExperience
 };
 
 function create(experience) {
@@ -21,6 +22,10 @@ function create(experience) {
 }
 
 function getAllExperiences() {
+  return fetch(BASE_URL).then(res => res.json());
+}
+
+function getNewExperience() {
   return fetch(BASE_URL).then(res => res.json());
 }
 

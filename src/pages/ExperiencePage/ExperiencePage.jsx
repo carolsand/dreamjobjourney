@@ -5,20 +5,20 @@ import './ExperiencePage.css';
 // I want to show all the users experiences on this page
 
 const ExperiencePage = (props) => (
-  <div >
+  <div className= "main">
     <ExperienceForm
     />
-    <div className="ExperiencePage" >
+    <div>
       {props.experiences.map((experience, idx) =>
-        <>
           <div className="ExperiencePage-experience" >
-            <span key={idx}>{experience.name}</span>
-            <span key={idx} >{experience.description}</span>
-            <span key={idx}>{experience.activity[idx]}</span>
-            <span key={idx}>{experience.city}</span>
-            <span key={idx}>{experience.state}</span>
+            <span key={1 + idx}>Name: {experience.name}</span>
+            <span key={2 + idx}>Activity: {experience.activity[idx]}</span>
+            <span key={3 + idx}>Description: {experience.description}</span>
+            <span key={4 + idx}>City: {experience.city}</span>
+            <span key={5 + idx}>State: {experience.state}</span>
+            <span key={6 + idx}>Country: {experience.country}</span>
+            &nbsp;&nbsp;*****************&nbsp;&nbsp;&nbsp;
           </div>
-        </>
       )}
     </div>
   </div>

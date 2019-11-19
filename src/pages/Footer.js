@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../images/logoPetraTrek2TheCity.jpg';
+import './Footer.css';
 // import logo from './logo.png'; // Tell Webpack this JS file uses this image
 
 function Footer() {

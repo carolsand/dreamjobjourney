@@ -36,6 +36,11 @@ class App extends Component {
     this.setState({ experience, experiences });
   }
 
+  getNewExperience = () => {
+    const experience = experienceService.getOneExperience();
+    this.setState({experience});
+  }
+
 
   handleLogout = () => {
     userService.logout();
@@ -59,8 +64,9 @@ class App extends Component {
             handleLogout={this.handleLogout}
             />
          <Switch>
-          <Route exact path='/' render={() =>
+          <Route exact path='/' render={({ history }) =>
             < InfoPage 
+              history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
             
@@ -78,11 +84,14 @@ class App extends Component {
             />
           } />
           <Route exact path='/profilepage' render={() =>
+            this.state.user ?
             <ProfilePage
-              user={this.state.user}
+              experiences={this.state.experiences}
               handleGetAllExperiences={this.handleGetAllExperiences}
               
             />
+            :
+              <Redirect to='/InfoPage' />
           } />
           <Route exact path='/experience-page' render={() =>
             this.state.user ?
@@ -95,9 +104,12 @@ class App extends Component {
             :
               <Redirect to='/InfoPage' />
           } />
-          <Route exact path='/dream-job-journey' render={() =>
+          <Route exact path='/dream-job-journey' render={({ history }) =>
               this.state.user ?
               <DreamJobJourney
+              history={ history }
+              // experiences={this.state.experiences}
+              user={this.state.user}              
               experiences={this.state.experiences}
                  
               />

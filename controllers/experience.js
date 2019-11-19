@@ -63,15 +63,18 @@ async function getExperience(req, res) {
 }
 
 async function getAllExperiences(req, res) {
-  const experiences = await Experience.find(req.params._id)
+  const experiences = await Experience.find({user:req.body.user}, req.params._id)
+  console.log('Users Experiences------>', experiences)
+  // console.log('Users req------>', req)
+  console.log('Users response------>', res)
   res.json(experiences);
 }
 
 async function getOneExperience(req, res) {
   Experience.findById(req.params._id, experience._id)
-
      .populate('experience')
      .then(experience => res.json(experience));
+     console.log(experience)
 }
 
 async function deleteExperience(req, res) {

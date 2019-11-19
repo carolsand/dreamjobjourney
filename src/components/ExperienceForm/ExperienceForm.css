@@ -1,0 +1,9 @@
+main {
+  display: inline-block;
+  position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  /* background-image:url(../images/katie-smith-uQs1802D0CQ-unsplash.jpg); */
+}
