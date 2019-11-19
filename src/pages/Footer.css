@@ -1,0 +1,9 @@
+img {
+  display: inline-block;
+    position: absolute;
+    background-image:url(../images/logoPetraTrek2TheCity.jpg);
+    background-attachment: fixed;
+    /* background-position: center; */
+    background-size: cover;
+    height: 100em;
+}

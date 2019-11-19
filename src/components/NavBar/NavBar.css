@@ -1,16 +1,12 @@
 .NavBar {
   display: flex;
   justify-content: center;
-  /* margin: 0 0 20px; */
-  /* margin-top: 2px; */
-  padding: 1%;
-  background-color: rgb(29, 27, 1);
+  padding: .5%;
+  font-size: 1.2em;
+  background-color: rgb(12, 12, 12);
+  opacity: .9;
 }
 
 .NavBar :hover{
   color: rgb(41, 212, 41);
 }
-
-/* .NavBar-welcome{
-  color: rgb(199, 23, 23);
-} */

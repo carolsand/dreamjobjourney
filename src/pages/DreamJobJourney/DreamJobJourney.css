@@ -1,24 +1,20 @@
 .DreamJobJourneyPage {
   display: flex;
   height: 20%;
-  justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 1.2em;
+  opacity: .8;
 }
 
 .DreamJobJourneyPage-experience {
-  padding: 2%;
   border-radius: 5%;
-  text-align: justify;
-  /* width: 40%; */
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-gap: 4%;
-  background-color: rgba(2, 37, 37, 0.3);
+  /* text-align: justify; */
+  width: 40%;
+  /* display: grid; */
+  /* grid-template-columns: 2fr 2fr 2fr; */
+  grid-gap: .5%;
+  background-color: rgb(0, 0, 0);
   /* background-color: darkslategrey; */
   color: rgba(106, 252, 57, 0.9);
-}
-
-.DreamJobJourneyPage {
-  color: rgba(56, 2, 2, .5);
+  opacity: .9;
 }

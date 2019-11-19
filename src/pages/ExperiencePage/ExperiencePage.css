@@ -25,6 +25,16 @@ span {
   font-size: 15px;
 }
 
+/* main {
+  display: inline-block;
+  position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  /* background-image:url(../images/katie-smith-uQs1802D0CQ-unsplash.jpg); 
+} */
+
 .ExperiencePage-experience {
   display: flex;
   padding: 2%;
@@ -36,5 +46,5 @@ span {
 }
 
 .ExperiencePage {
-  color: rgb(56, 2, 2);
+  color: rgba(56, 2, 2, .1);
 }

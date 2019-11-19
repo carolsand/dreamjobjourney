@@ -82,8 +82,9 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           } />
-          <Route exact path='/profilepage' render={() =>
+          <Route exact path='/profilepage' render={({ history }) =>
             <ProfilePage
+              history={ history }
               user={this.state.user}
               handleGetAllExperiences={this.handleGetAllExperiences}
               
@@ -100,9 +101,12 @@ class App extends Component {
             :
               <Redirect to='/InfoPage' />
           } />
-          <Route exact path='/dream-job-journey' render={() =>
+          <Route exact path='/dream-job-journey' render={({ history }) =>
               this.state.user ?
               <DreamJobJourney
+              history={ history }
+              // experiences={this.state.experiences}
+              user={this.state.user}              
               experiences={this.state.experiences}
                  
               />
