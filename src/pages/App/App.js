@@ -7,7 +7,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 import userService from '../../utils/userService';
 import experienceService from '../../utils/experienceService';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'react-bulma-components/dist/react-bulma-components.min.css';
 import InfoPage from '../InfoPage/InfoPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import ExperiencePage from '../ExperiencePage/ExperiencePage';
@@ -57,8 +58,8 @@ class App extends Component {
 
   render() {
     return ( 
-      <div>
-        <header className='parallax'> &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
+      <div className=""> 
+        <header className='container'> &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
           <NavBar 
             user={this.state.user}
             handleLogout={this.handleLogout}

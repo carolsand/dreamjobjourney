@@ -1,8 +1,9 @@
 import React from 'react';
 import './ProfilePage.css';
+import {Button} from 'react-bootstrap';
 
 const ProfilePage = (props) => (
-  <div className="ProfilePage">
+  <div className="container">
     {props.experiences.map((experience, idx) =>
       <>
         <div className="ProfilePage-experience" key={idx}>

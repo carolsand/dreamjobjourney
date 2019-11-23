@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import experienceService from '../../utils/experienceService';
 import './ExperienceForm.css';
+import Button from 'react-bootstrap/Button';
+
 
 class ExperienceForm extends Component {
   constructor(props) {
@@ -39,7 +41,7 @@ class ExperienceForm extends Component {
       // Let <App> know a experience was created!
       this.props.handleCreateExperience();
       // Successfully created experience - show experience Experience page
-      this.props.history.push('/');
+      // this.props.history.push('/');
     } catch (err) { 
       console.log('Invalid user data');
       // this.props.updateMessage(err.message);
@@ -52,7 +54,7 @@ class ExperienceForm extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="container">
         <header className="header">Create Your Dream Experience</header>
           <label>
             <span>Job</span>

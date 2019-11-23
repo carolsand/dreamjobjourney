@@ -5,7 +5,7 @@ import './ExperiencePage.css';
 // I want to show all the users experiences on this page
 
 const ExperiencePage = (props) => (
-  <div className= "parallax">
+  <div className= "container">
     <ExperienceForm
     />
     <div>
@@ -17,7 +17,6 @@ const ExperiencePage = (props) => (
             <span key={4 + idx}>City: {experience.city}</span>
             <span key={5 + idx}>State: {experience.state}</span>
             <span key={6 + idx}>Country: {experience.country}</span>
-            &nbsp;&nbsp;*****************&nbsp;&nbsp;&nbsp;
           </div>
       )}
     </div>
