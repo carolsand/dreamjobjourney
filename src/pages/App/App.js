@@ -58,7 +58,7 @@ class App extends Component {
   render() {
     return ( 
       <div>
-        <header className='header-footer'> &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
+        <header className='parallax'> &nbsp;&nbsp;&nbsp; Dream Job Journey </header>
           <NavBar 
             user={this.state.user}
             handleLogout={this.handleLogout}
@@ -117,9 +117,6 @@ class App extends Component {
               <Redirect to='/InfoPage' />
           } />
         </Switch> 
-        <footer>
-          <InfoPage />
-        </footer>
       </div>
     );
   }

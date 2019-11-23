@@ -1,19 +1,11 @@
-.ExperiencePage {
+/* .ExperiencePage {
   display: flex;
   height: 40%;
   justify-content: center;
   align-items: center;
   font-size: 15px;
 }
-
-main {
-  /* display: inline-block; */
-  position: absolute;
-  /* background-attachment: fixed; */
-  /* background-position: center; */
-  /* width: 100%; */
-  /* background-image:url(../../images/logoPetraTrek2TheCity.jpg); */
-} 
+*/
 
 /* .ExperiencePage-experience {
   display: flex;
@@ -27,15 +19,27 @@ main {
 
 .ExperiencePage-experience {
   display: grid;
-  grid-column: span;
-  /* grid-auto-rows: 2vmin; */
+  grid-auto-rows: 2vmin; 
   border-radius: 5%;
   text-align: justify;
   width: 28em;
-  /* grid-template-columns: 2fr 2fr 2fr; */
+  grid-template-rows: 2fr 2fr 2fr 2fr;
   grid-gap: .05%;
   background-color: rgba(0, 0, 0, 0.9);
-  /* background-color: darkslategrey; */
   color: rgb(44, 117, 20);
-  /* opacity: .8; */
+  opacity: .8; 
+}
+
+.parallax {
+  /* The image used */
+  background-image:url(../../images/logoPetraTrek2TheCity.jpg);
+
+  /* Set a specific height */
+  height: 100vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
