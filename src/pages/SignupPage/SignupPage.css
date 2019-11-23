@@ -9,6 +9,7 @@
 
   /* Set a specific height */
   height: 100vh;
+  width: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

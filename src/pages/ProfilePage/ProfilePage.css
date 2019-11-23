@@ -3,7 +3,8 @@
   background-image:url(../../images/logoPetraTrek2TheCity.jpg);
 
   /* Set a specific height */
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -12,7 +13,7 @@
   background-size: cover;
 }
 
-.ProfilePage-experience {
+/* .ProfilePage-experience {
   padding: 20px;
   border-radius: 25px;
   text-align: justify;
@@ -22,5 +23,5 @@
   grid-gap: 20px;
   background-color: rgba(22, 37, 37, 0.9);
   color: rgba(224, 193, 193, 0.7);
-}
+} */
 
