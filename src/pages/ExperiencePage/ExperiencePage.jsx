@@ -8,7 +8,7 @@ const ExperiencePage = (props) => (
   <div className= "container">
     <ExperienceForm
     />
-    <div>
+    <div className="card-body">
       {props.experiences.map((experience, idx) =>
           <div className="ExperiencePage-experience" >
             <span key={1 + idx}>Name: {experience.name}</span>

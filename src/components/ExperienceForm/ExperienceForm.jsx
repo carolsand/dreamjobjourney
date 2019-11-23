@@ -94,13 +94,13 @@ class ExperienceForm extends Component {
               <option value="country">United States</option>
             </select>
           </label>
-          <form className="form-horizontal" onSubmit={this.handleChange} >
-            <div className="form-group">
+          <form className="form-inline" onSubmit={this.handleChange} >
+            <div className="form-inline">
               <div className="col-sm-12">
                 <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
               </div>
             </div>
-            <div className="form-group">
+            <div className="form-inline">
               <div className="col-sm-12">
                 <input type="text" className="form-control" placeholder="Description" value={this.state.description} name="description" onChange={this.handleChange} />
               </div>

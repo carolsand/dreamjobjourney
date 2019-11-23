@@ -2,7 +2,7 @@ import React from 'react';
 import './DreamJobJourney.css';
  
 const DreamJobJourney = (props) => (
-    <div className="DreamJobJourneyPage">
+    <div className="container">
       {props.experiences.map((experience, idx) =>
           <div className="DreamJobJourneyPage-experience" >
             <span key={1 + idx}>Name: {experience.name}</span>

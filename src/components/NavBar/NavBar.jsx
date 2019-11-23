@@ -4,19 +4,20 @@ import './NavBar.css';
 
 const NavBar = (props) => {
   let nav = props.user ?
-    <div>
+    <div className='navbar'>
       {/* <Link to='/dream-job-journey' className='NavBar-link'>Dream Experiences</Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp; */}
-      <Link to='/dream-job-journey' className='NavBar-link'>Home</Link>
+      <Link to='/dream-job-journey' className='nav-link'>Home</Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
-      <Link to='/experience-page' className='NavBar-link'>Create An Experience </Link>
+      <Link to='/experience-page' className='nav-link'>Create Experience </Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
-      <Link to='/profile-page' className='NavBar-link'> {props.user.name}'s Profile Page</Link>
+      <Link to='/profile-page' className='nav-link'> {props.user.name}'s Profile Page</Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
-      <Link to='/profile-page' className='NavBar-link'>{props.user.name}'s' Info Page</Link>
+      <Link to='/profile-page' className='nav-link'>{props.user.name}'s Page</Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
-      <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
+      <Link to='' className='nav-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      {/* <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search"></input> */}
     </div>
     :
     <div>
