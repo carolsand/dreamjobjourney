@@ -5,5 +5,12 @@ main {
   background-position: center;
   background-size: cover;
   width: 100%;
-  /* background-image:url(../images/katie-smith-uQs1802D0CQ-unsplash.jpg); */
+}
+
+body {
+  color: rgba(113, 134, 190, 0.8);
+}
+
+body :hover {
+  color: chartreuse;
 }
