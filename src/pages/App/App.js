@@ -87,12 +87,13 @@ class App extends Component {
           <Route exact path='/profilepage' render={() =>
             this.state.user ?
             <ProfilePage
+              user={this.state.user}
               experiences={this.state.experiences}
               handleGetAllExperiences={this.handleGetAllExperiences}
               
             />
             :
-              <Redirect to='/InfoPage' />
+              <Redirect to='/dream-job-journey' />
           } />
           <Route exact path='/experience-page' render={() =>
             this.state.user ?

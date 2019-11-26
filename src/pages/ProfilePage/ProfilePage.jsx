@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProfilePage.css';
-import {Button} from 'react-bootstrap';
+// import {Button} from 'react-bootstrap';
 
 const ProfilePage = (props) => (
   <div className="container">
