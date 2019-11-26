@@ -99,7 +99,7 @@ class App extends Component {
             <ExperiencePage
              user={this.state.user}
              experiences={this.state.experiences}
-             handleGetAllExperiences={this.handleGetAllExperiences}
+             handleGetOneExperience={this.handleOneExperience}
              
             />
             :

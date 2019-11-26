@@ -9,7 +9,7 @@ const experienceCtrl = require('../../controllers/experience');
 
 router.get('/:id', experienceCtrl.getOneExperience);
 router.get('/', experienceCtrl.getAllExperiences);
-router.post('/', experienceCtrl.create);
-router.post('/:id', experienceCtrl.update);
+router.post('/', experienceCtrl.createExperience);
+router.post('/:id', experienceCtrl.updateExperience);
 
 module.exports = router;
