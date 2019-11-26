@@ -12,9 +12,14 @@ main {
 }
 
 body {
-  color: rgba(113, 134, 190, 0.8);
+  color: rgba(4, 13, 41, 0.8);
 }
 
 body :hover {
-  color: chartreuse;
+  color: rgb(219, 84, 5);
+}
+
+.btn, a{
+  color: orangered;
+
 }
