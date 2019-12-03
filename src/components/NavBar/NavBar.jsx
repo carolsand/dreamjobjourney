@@ -13,7 +13,7 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
       <Link to='/profile-page' className='nav-link'> {props.user.name}'s Profile Page</Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
-      <Link to='/profile-page' className='nav-link'>{props.user.name}'s Page</Link>
+      <Link to='/info-page' className='nav-link'>{props.user.name}'s Page</Link>
       &nbsp;&nbsp;|||&nbsp;&nbsp;&nbsp;
       <Link to='' className='nav-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

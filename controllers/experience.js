@@ -33,13 +33,21 @@ async function createExperience(req, res) {
       An experience is associated with a logged in user. The logged in user has a profile
       Update function should update the experience with an activity and job which will be associated
       with the logged in user  */
-      const user = await User.findOne({user: req.body.user});
+      
       try {
     // creating the activity object associate with the user experience
-
-    console.log('Request Body -->', req.body);              
-    console.log('Request User -->', req.user);
-    var activity = new Activity();
+    console.log('Request Body inside create -->', req.body); 
+    /* This next line will find the first instance of a user in the database. It doesnot mean this is
+    the current logged in user */             
+    // const user = await User.findOne({user: req.body.user});
+    // console.log('Request User -->', user);
+    
+    /* ReQ.user */
+    console.log('req.user----->', req.user);
+    var experience = new Experience();
+    console.log('New Experience -->', experience);
+    // console.log('New User Experience -->', user.experience);
+    // var activity = new Activity();
     // activity.user = req.user.id;
     console.log('User Activity ---->', activity.user);
     activity.name = "";
@@ -55,11 +63,12 @@ async function createExperience(req, res) {
     job.jobtitle = "";
     // let experienceObj = req.body; ---> Already defined on line 41
     experienceObj.jobtitle = job;
-    let experience = await Experience.create(experienceObj);
+    let newExperience = await Experience.create(experienceObj);
     activity = await Activity.create(activity);
     job = await Job.create(job);
+    console.log('Line before res.json ----->',experienceObj);
     // Use the experience action to return the list experience(req, res);
-    res.json({ experienceObj, "Success": true});
+    res.json({ newExperience, "Success": true});
   } catch (err) {
     console.log("Error: " + err);
     res.json({ err });
@@ -81,16 +90,19 @@ async function getExperience(req, res) {
 
 async function getAllExperiences(req, res) {
   const user = await User.findOne({user: req.body.user});
-  const experiences = await Experience.find({user: user._id});
+  // const experiences = await Experience.find({user: user._id});
+  const experiences = await Experience.find();
+
   res.json(experiences);
 }
 
 async function getOneExperience(req, res) {
+  console.log('Inside getOneExperience function REQ==--->', req);
   const user = await User.findOne({user: req.body.user});
+  // const experience = Experience.findById({user: user._id})
   const experience = Experience.findById({user: user._id})
-     .populate('experience')
-     .then(experience => res.json(experience));
-     console.log(experience);
+  console.log('getOneExperience function --->', experience);
+  res.json(experience);
 }
 
 async function deleteExperience(req, res) {
