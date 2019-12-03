@@ -49,19 +49,19 @@ async function createExperience(req, res) {
     /*  Creating New Experience */
     let experienceObj = req.body;
     
-    var experience = new Experience();
-    console.log('New Experience -->', experience);
+    // var experience = new Experience();
+    // console.log('New Experience -->', experience);
     // console.log('New User Experience -->', user.experience);
 
     /* Creating New Activity */
-    var activity = new Activity({});
+    var activity = new Activity();
+    activity = await Activity.create(activity);
+    experienceObj.activity = activity;
     // activity.user = req.user.id;
     // console.log('User Activity ---->', experience.activity._id);
-    // activity = "";
     
     /* creating the job object associate with the user experience */
     var job = new Job();
-    // job.jobtitle = "";
     job = await Job.create(job);
     experienceObj.jobtitle = job;
     
