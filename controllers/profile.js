@@ -5,7 +5,7 @@ module.exports = {
   getProfile,
   create,
   deleteProfile,
-  newProfile,
+  new: newProfile,
   show
 };
 

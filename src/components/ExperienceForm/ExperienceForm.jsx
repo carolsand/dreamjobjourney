@@ -6,46 +6,45 @@ import './ExperienceForm.css';
 
 class ExperienceForm extends Component {
   constructor(props) {
-    super();
-  this.state = {
-    name: '',
-    description: '',
-    activity: [],
-    jobtitle: {}, 
-    city: '',
-    state:'',
-    country: '',
-    passwordConf:''
-  };
+    super(props);
+    this.state = {
+        name: '',
+        description: '',
+        activity: [],
+        jobtitle: {}, 
+        city: '',
+        state:'',
+        country: '',
+        passwordConf:''
+      };
   }
+  
+  // handleUpdate = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await experienceService.addJobToExperience(this.state);
+  //   }catch (err){
+  //     console.log('Invalid user data');
+  //   }
+  // }
+
   handleChange = (e) => {
+    // this.props.updateMessage('');
     this.setState({
       // Using ES2015 Computed Property Names
       [e.target.name]: e.target.value
     });
-  }
-  handleUpdate = async (e) => {
-    e.preventDefault();
-    try {
-      await experienceService.addJobToExperience(this.state);
-    }catch (err){
-      console.log('Invalid user data');
-    }
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await experienceService.create(this.state);
-      // Let <App> know a experience was created!
-      this.props.handleCreateExperience();
-      // Successfully created experience - show experience Experience page
-      this.props.history.push('/');
     } catch (err) { 
       console.log('Invalid user data');
-      // this.props.updateMessage(err.message);
+      // this.updateMessage(err.message);
     }
-  }
+  };
 
   isFormInvalid() {
     return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf);

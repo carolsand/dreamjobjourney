@@ -22,12 +22,12 @@ class App extends Component {
       experiences: [],
       activity: [],
       job: {},
-      profile: experienceService.getAllExperiences(),
+      profile: userService.getUser(),
     };
   }
 
   async componentDidMount () {
-    let experience = await experienceService.getAllExperiences(this.props.user);
+    let experience = await experienceService.getAllExperiences();
     const experiences = await experienceService.getAllExperiences();
     this.setState({experience, experiences});
   }
@@ -37,9 +37,9 @@ class App extends Component {
     this.setState({ experience, experiences });
   }
 
-  getNewExperience = () => {
-    const experience = experienceService.getOneExperience();
-    this.setState({experience});
+  handleGetNewExperience = (experience) => {
+    const newExperience = experienceService.getOneExperience(experience);
+    this.setState({newExperience, experience});
   }
 
 
@@ -67,7 +67,6 @@ class App extends Component {
          <Switch>
           <Route exact path='/' render={({ history }) =>
             < InfoPage 
-              history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
             
@@ -84,7 +83,7 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           } />
-          <Route exact path='/profilepage' render={() =>
+          <Route exact path='/profile-page' render={() =>
             this.state.user ?
             <ProfilePage
               user={this.state.user}
@@ -100,23 +99,23 @@ class App extends Component {
             <ExperiencePage
              user={this.state.user}
              experiences={this.state.experiences}
-             handleGetOneExperience={this.handleOneExperience}
+             handleCreateExperience={this.handleCreateExperience}
+             handleGetNewExperience={this.handleGetNewExperience}
              
             />
             :
-              <Redirect to='/InfoPage' />
+              <Redirect to='/Info-Page' />
           } />
-          <Route exact path='/dream-job-journey' render={({ history }) =>
+          <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?
               <DreamJobJourney
-              history={ history }
-              // experiences={this.state.experiences}
+              handleGetAllExperiences={this.handleGetAllExperiences}
               user={this.state.user}              
               experiences={this.state.experiences}
                  
               />
               :
-              <Redirect to='/InfoPage' />
+              <Redirect to='/Info-Page' />
           } />
         </Switch> 
       </div>

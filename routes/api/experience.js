@@ -7,8 +7,8 @@ const experienceCtrl = require('../../controllers/experience');
 
 /*---------- Protected Routes ----------*/
 
-router.get('/:id', experienceCtrl.getOneExperience);
 router.get('/', experienceCtrl.getAllExperiences);
+router.get('/', experienceCtrl.getOneExperience);
 router.post('/', experienceCtrl.createExperience);
 router.post('/:id', experienceCtrl.updateExperience);
 
