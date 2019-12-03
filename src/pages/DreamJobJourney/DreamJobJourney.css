@@ -14,13 +14,14 @@
 
 .DreamJobJourneyPage-experience {
   display: grid;
-  grid-column: span;
+  grid-template-rows: 2fr 2fr 2fr 2fr 2fr;
   grid-auto-rows: 2vmin;
-  border-radius: 5%;
+  border-radius: 2%;
   text-align: justify;
   width: 28em;
-  grid-gap: .05%;
+  /* grid-gap: .05%; */
   background-color: rgba(0, 0, 0, 0.9);
   color: rgb(44, 117, 20);
   opacity: .8;
+  padding: 5vh;
 }

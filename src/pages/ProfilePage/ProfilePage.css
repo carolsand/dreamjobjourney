@@ -13,7 +13,7 @@
   background-size: cover;
 }
 
-/* .ProfilePage-experience {
+/* .ProfilePage-experience { 
   padding: 20px;
   border-radius: 25px;
   text-align: justify;
@@ -25,3 +25,16 @@
   color: rgba(224, 193, 193, 0.7);
 } */
 
+.ProfilePage-experience {
+  display: grid;
+  grid-auto-rows: 2vmin; 
+  border-radius: 6%;
+  text-align: justify;
+  width: 28em;
+  grid-template-rows: 2fr 2fr 2fr 2fr;
+  grid-gap: 1.05%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgb(27, 77, 10);
+  opacity: .8; 
+  padding: 10px;
+}

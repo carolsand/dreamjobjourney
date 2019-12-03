@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   handleGetNewExperience = (experience) => {
-    const newExperience = experienceService.getOneExperience();
+    const newExperience = experienceService.getOneExperience(experience);
     this.setState({newExperience, experience});
   }
 
@@ -83,7 +83,7 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           } />
-          <Route exact path='/profilepage' render={() =>
+          <Route exact path='/profile-page' render={() =>
             this.state.user ?
             <ProfilePage
               user={this.state.user}
@@ -104,7 +104,7 @@ class App extends Component {
              
             />
             :
-              <Redirect to='/InfoPage' />
+              <Redirect to='/Info-Page' />
           } />
           <Route exact path='/dream-job-journey' render={() =>
               this.state.user ?
@@ -115,7 +115,7 @@ class App extends Component {
                  
               />
               :
-              <Redirect to='/InfoPage' />
+              <Redirect to='/Info-Page' />
           } />
         </Switch> 
       </div>
