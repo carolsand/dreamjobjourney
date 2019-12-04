@@ -2,7 +2,9 @@ var Experience = require('../models/experience');
 var Profile = require('../models/profile');
 var Activity = require('../models/activity');
 var Job = require('../models/job');
-var User = require('../models/user')
+// import '../src/utils/userService';
+// var user = require('../src/utils/userService');
+
 
 module.exports = {
   createExperience,
@@ -15,7 +17,7 @@ module.exports = {
 
 async function updateExperience(req, res) {
   // update one experience based on what the user provided
-  if (req.user){
+  if (res){
     try {
       await Experience.findByIdAndUpdate(req.params.id, req.body);
       // await Activity.findById(req.params.id, req.body)
@@ -29,6 +31,9 @@ async function updateExperience(req, res) {
 }
 
 async function createExperience(req, res) {
+  console.log('this is suposed to be the loggedin user--->', res)
+  if (res){
+
   /* The point of this function is to create an experience. What is in an experience?
       An experience is associated with a logged in user. The logged in user has a profile
       Update function should update the experience with an activity and job which will be associated
@@ -81,6 +86,7 @@ async function createExperience(req, res) {
     console.log("Error: " + err);
     res.json({ err });
   }
+ }
 }
 
 async function getExperience(req, res) {
@@ -97,8 +103,13 @@ async function getExperience(req, res) {
 }
 
 async function getAllExperiences(req, res) {
-  const user = req.body.user;
+  if (req.userId) {
+  // const user = req.body.user;
   // const experiences = await Experience.find({user: user._id});
+  // const experiences = await Experience.find({});
+  // console.log('Hoping to get the logged in user--->', user);
+  // res.json(experiences);
+ }
   const experiences = await Experience.find({});
   console.log('Hoping to get the logged in user--->', user);
   res.json(experiences);
@@ -107,7 +118,7 @@ async function getAllExperiences(req, res) {
 async function getOneExperience(req, res) {
   console.log('Inside getOneExperience function REQ==--->', req);
   // const experience = Experience.findById({user: user._id})
-  const experience = Experience.findById({id: req._id});
+  const experience = Experience.findById({id: req.userId});
   console.log('getOneExperience function --->', experience);
   res.json(experience);
 }
