@@ -92,7 +92,7 @@ async function createExperience(req, res) {
  }
 }
 
-async function getExperience(req, res) {
+async function getExperienceOld(req, res) {
   Profile.findOne({user:req.body.user}, req.params.id)
     .populate('experience')
     .then(exp => {
@@ -103,6 +103,17 @@ async function getExperience(req, res) {
       });
     });
   res.json(experience);
+}
+
+async function getExperience(req, res) {
+  try {
+    let user = await Profile.findById(req.params.id);
+    let experience= await user.experience.pull(req.body.user);
+    return res.json(experience);
+  } catch(err) {
+    console.log(err);
+    return res.status(500).send('Error with request');
+  }
 }
 
 async function getAllExperiences(req, res) {
@@ -129,4 +140,17 @@ async function getOneExperience(req, res) {
 async function deleteExperience(req, res) {
   const experience = await Experience.findOneAndDelete(req.params._id, experience._id);
   res.json();
+}
+
+async function delPref(req, res) {
+  try {
+    let user = await User.findById(req.body.user);
+    let experience = await Experience.findById(req.body.user);
+    user.profile.pull(req.body.id);
+    user.save();
+    return res.json(user);
+  } catch(err) {
+    console.log(err);
+    return res.status(500).send('Error with delete');
+  }
 }
