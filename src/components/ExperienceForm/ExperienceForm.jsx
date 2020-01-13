@@ -75,7 +75,7 @@ class ExperienceForm extends Component {
           &nbsp;&nbsp;&nbsp;
           <label>
             <span>Activity</span>
-            <select name='FunToDo'>
+            <select name='activity'>
                 <option value="activity"></option>
                 <option value="activity">Hiking</option>
                 <option value="activity">Sailing</option>
@@ -105,7 +105,7 @@ class ExperienceForm extends Component {
               <label>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span>Country</span>
-              <select name='location'>
+              <select name='country'>
                 <option value="country"></option>
                 <option value="country">Senegal</option>
                 <option value="country">France</option>
