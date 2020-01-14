@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const verify = require('../verifytoken');
 const experienceCtrl = require('../../controllers/experience');
 
 /*---------- Public Routes ----------*/
@@ -7,8 +8,8 @@ const experienceCtrl = require('../../controllers/experience');
 
 /*---------- Protected Routes ----------*/
 
-router.get('/', experienceCtrl.getExperiences);
-router.get('/:id', experienceCtrl.getExperience);
+router.get('/', verify, experienceCtrl.getExperiences);
+router.get('/', experienceCtrl.getExperience);
 router.post('/', experienceCtrl.createExperience);
 router.post('/:id', experienceCtrl.updateExperience);
 router.delete('/:id', experienceCtrl.deleteExperience);

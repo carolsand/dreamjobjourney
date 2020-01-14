@@ -10,12 +10,12 @@ class ExperienceForm extends Component {
     this.state = {
         name: '',
         description: '',
-        activity: [],
-        jobtitle: {}, 
+        activity: '',
+        jobtitle: '', 
         city: '',
         state:'',
         country: '',
-        passwordConf:''
+        user:''
       };
   }
   
@@ -70,23 +70,23 @@ class ExperienceForm extends Component {
             &nbsp;&nbsp;&nbsp;
             <label>
             <span>Dream Job</span>
-            <input name='jobtitle' />
+            <input name='jobtitle' value={this.state.jobtitle} onChange={this.handleChange} />
           </label>
           &nbsp;&nbsp;&nbsp;
           <label>
             <span>Activity</span>
-            <select name='activity'>
-                <option value="activity"></option>
-                <option value="activity">Hiking</option>
-                <option value="activity">Sailing</option>
-                <option value="activity">Cooking</option>
-                <option value="activity">Surfing</option>
-                <option value="activity">Singing</option>
-                <option value="activity">Clubing</option>
-                <option value="activity">Water Sking</option>
-                <option value="activity">Softball</option>
-                <option value="activity">Helicopter Rides</option>
-                <option value="activity">Shopping</option>
+            <select name='activity' onChange={this.handleChange}>
+                <option value={this.state.activity}></option>
+                <option value={this.state.activity}>Hiking</option>
+                <option value={this.state.activity}>Sailing</option>
+                <option value={this.state.activity}>Dining</option>
+                <option value={this.state.activity}>Surfing</option>
+                <option value={this.state.activity}>Hand Gliding</option>
+                <option value={this.state.activity}>Clubing</option>
+                <option value={this.state.activity}>Water Sking</option>
+                <option value={this.state.activity}>Softball</option>
+                <option value={this.state.activity}>Helicopter Rides</option>
+                <option value={this.state.activity}>Shopping</option>
               </select>
           </label>
           &nbsp;&nbsp;&nbsp;
@@ -106,17 +106,17 @@ class ExperienceForm extends Component {
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span>Country</span>
               <select name='country'>
-                <option value="country"></option>
-                <option value="country">Senegal</option>
-                <option value="country">France</option>
-                <option value="country">Israel</option>
-                <option value="country">Fiji</option>
-                <option value="country">Brussels</option>
-                <option value="country">England</option>
-                <option value="country">Morocco</option>
-                <option value="country">Nigeria</option>
-                <option value="country">Ethiopia</option>
-                <option value="country">United States</option>
+                <option value={this.state.country}></option>
+                <option value={this.state.country}>Senegal</option>
+                <option value={this.state.country}>France</option>
+                <option value={this.state.country}>Israel</option>
+                <option value={this.state.country}>Fiji</option>
+                <option value={this.state.country}>Brussels</option>
+                <option value={this.state.country}>England</option>
+                <option value={this.state.country}>Morocco</option>
+                <option value={this.state.country}>Nigeria</option>
+                <option value={this.state.country}>Ethiopia</option>
+                <option value={this.state.country}>United States</option>
               </select>
             </label>
             &nbsp;&nbsp;&nbsp;
